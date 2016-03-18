@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<span> hello Servlet / Jsp , Github world, HiiIIIiii Hello</span>
+<span> hello Servlet /// Jsp , Github world, HiiIIIiii Hello</span>
 </body>
 </html>
