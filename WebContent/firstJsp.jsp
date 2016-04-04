@@ -142,16 +142,16 @@
 		       					</div>
 		       				</div>
 		       				</div>
-<<<<<<< HEAD
+
 		       	  </div>
 		       			
 		       			
 		       			
 		       				       	
-=======
+
 		       	  </div> --%>
 				       	
->>>>>>> daesub
+
 		       	</div>
 
 		     <!--   	<div class="row"> -->
