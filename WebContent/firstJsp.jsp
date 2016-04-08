@@ -89,27 +89,20 @@
 </head>
 
 <!-- <body>
-
 	<div class="all">
 		<div class="container-fluid">
-			
-
-			
 			<div id="loginContent">
 				<form id="loginForm" role="form">
 				<div class="row form-group">
-			
 					<div class="col-md-6">
 						<input type="text">
 					</div>
 					<div class="col-md-6">
 						<input type="password">
 					</div>
-					
 				</div>
 				</form>
 			</div>
-			
 		</div>
 	</div>
 
@@ -142,28 +135,20 @@
 		       				</div>
 		       				</div>
 		       	  </div>
-		       			
-		       			
-		       			
-		       				       	
 		       	</div>
-
 		     <!--   	<div class="row"> -->
-		       	
 		  <!--      		<div class="col-md-12">
 		       				<div class="row">
 		       					<div class="col-md-12 loginMainScope">
 		       						<h1>Fleax!</h1>
 		       					</div>
 		       					</div>
-		       					
 		       					<div class="row">
 		       					<div class="col-md-12 loginMainScope">
 		       						<p>로그인하세요</p> 
 		       					</div>
 		       				</div>
 		       	  </div> -->
-
 		   <!--  </div> -->
 		</div>
 		   

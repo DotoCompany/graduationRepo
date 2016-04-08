@@ -19,7 +19,7 @@ public class DBConnection {
 	private DBConnection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/graduationRepo","root","0000");
+			conn = DriverManager.getConnection("jdbc:mysql://172.31.132.183:3306/graduationRepo","root","0000");
 			conn.setAutoCommit(false);
 		} catch (Exception ex) {
 			ex.printStackTrace();
