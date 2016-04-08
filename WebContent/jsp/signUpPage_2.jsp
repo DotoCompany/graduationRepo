@@ -69,52 +69,7 @@
 
 <div id="all">
 
-		   <div  class = "jumbotron" id = "loginMain">
-		       	<div class="row">
-		       		<div class="col-md-12 loginMainScope">
-		       		    <div class="col-md-4">
-		       				<img src = "<%=request.getContextPath()%>/images/mainPage/image/mainLogo.png" id ="loginMainImg">
-		       			</div>
-		       			
-		       			    <div class="col-md-8">
-		       			    <br><br><br>
-		       				<div class="row">
-		       					<div class="col-md-12 loginMainScope">
-		       						<h1>Fleax!</h1>
-		       					</div>
-		       					</div>
-		       					
-		       					<div class="row">
-		       					<div class="col-md-12 loginMainScope">
-		       						<p>가입하세요</p> 
-		       					</div>
-		       				</div>
-		       				</div>
-		       	  </div>
-		       			
-		       			
-		       			
-		       				       	
-		       	</div>
-
-		     <!--   	<div class="row"> -->
-		       	
-		  <!--      		<div class="col-md-12">
-		       				<div class="row">
-		       					<div class="col-md-12 loginMainScope">
-		       						<h1>Fleax!</h1>
-		       					</div>
-		       					</div>
-		       					
-		       					<div class="row">
-		       					<div class="col-md-12 loginMainScope">
-		       						<p>로그인하세요</p> 
-		       					</div>
-		       				</div>
-		       	  </div> -->
-
-		   <!--  </div> -->
-		</div>
+		   
     
     <ul class="nav nav-tabs">
       <li class="active"><a data-toggle="tab" href="#attendantSignUp" id = "selectedMU">일반사용자</a></li>
