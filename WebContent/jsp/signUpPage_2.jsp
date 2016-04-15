@@ -128,10 +128,9 @@
    </div> <!-- end of row -->
    
    <div id="signUpContentDiv">
-      
-         <form action="<%=request.getContextPath()%>/register.do" method="post" id="signUpForm">
+     <form action="<%=request.getContextPath()%>/register.do" method="post" id="signUpForm">
       <div id='content' class="tab-content">
-
+	
          <div class="tab-pane fade in active" id="attendantSignUp">
          
          <input type = "hidden" name = "checkUser" value = "mu" id ="checkUserType">
@@ -141,22 +140,21 @@
                <div class="col-md-4">
 
                   <button id="facebookLoginBtn" type="button" class="btn btn-primary btn-block">페이스북으로 RE:CALL 하기</button>
-
                   <br><br> 
                   
                   <div id="muExistNicknameResult"></div>
                   <input type="text" class="form-control" placeholder="이름 입력" size="20" name = "muNickname" id="muNicknameForm">
                   <div id="muExistResult"></div>
                   <input type="email" class="form-control" placeholder="이메일 입력" size="20" name = "muEmailId" id = "muEmailIdForm">
-                  <input type="email" class="form-control" placeholder="추가 이메일 입력" size="20" name = "muEmailId" id = "muContactEmailIdForm">
                   <br><br>
                   <input type="password" class="form-control" placeholder="비밀번호 입력" size="20" name = "muPassword" id = "muPasswordForm">
                   <!-- ajax 비동기 처리  -->
                   <input type="password" class="form-control" placeholder="비밀번호 확인" size="20" name = "muPasswordConfirm" id = "muPasswordConfirmForm">
                     <div id = "muResultForm"><span id="muResultFormSpan"></span></div>
+                    <input type="hidden" id="passwordCheckHiddenTag" value="false">
                    
                    
-				  <br><br>
+				  <br><%=request.getContextPath()%><br>
                   <textarea id="signUpPolicyArea" rows="10" disabled="disabled" >
                   제 1 조 (목적)
 
