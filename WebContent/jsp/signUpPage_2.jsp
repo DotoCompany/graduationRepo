@@ -135,7 +135,9 @@
             <div class="row">
                <div class="col-md-4"></div>
                <div class="col-md-4">
+
                   <button id="facebookLoginBtn" type="button" class="btn btn-primary btn-block">페이스북으로 RE:CALL 하기</button>
+
                   <br><br> 
                   
                   <div id="muExistNicknameResult"></div>
@@ -154,7 +156,7 @@
                   <textarea id="signUpPolicyArea" rows="10" disabled="disabled" >
                   제 1 조 (목적)
 
-이 약관은 네이버 주식회사 ("회사" 또는 "네이버")가 제공하는 네이버 및 네이버 관련 제반 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
+이 약관은 "Doto Company" 가 제공하는 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
 제 2 조 (정의)
 
 이 약관에서 사용하는 용어의 정의는 다음과 같습니다.
@@ -514,7 +516,9 @@
    
    <br>
    <div id="signUpBottomDiv">
+
       <p>RE:CALL 회원 이신가요?<br>
+
       <a href="/fleax/jsp/loginPage.jsp">지금 로그인하세요</a></p>
    </div> <!-- end of signUpBottomDiv -->
     
