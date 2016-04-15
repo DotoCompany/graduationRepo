@@ -153,7 +153,7 @@
                   <input type="password" class="form-control" placeholder="비밀번호 입력" size="20" name = "muPassword" id = "muPasswordForm">
                   <!-- ajax 비동기 처리  -->
                   <input type="password" class="form-control" placeholder="비밀번호 확인" size="20" name = "muPasswordConfirm" id = "muPasswordConfirmForm">
-                    <div id = "muResultForm"></div>
+                    <div id = "muResultForm"><span id="muResultFormSpan"></span></div>
                    
                    
 				  <br><br>
