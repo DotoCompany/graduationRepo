@@ -135,21 +135,21 @@
             <div class="row">
                <div class="col-md-4"></div>
                <div class="col-md-4">
-                  <button id="facebookLoginBtn" type="button" class="btn btn-primary btn-block">페이스북으로 Fleax 하기</button>
+                  <button id="facebookLoginBtn" type="button" class="btn btn-primary btn-block">페이스북으로 RE:CALL 하기</button>
                   <br><br> 
                   
+                  <div id="muExistNicknameResult"></div>
+                  <input type="text" class="form-control" placeholder="이름 입력" size="20" name = "muNickname" id="muNicknameForm">
                   <div id="muExistResult"></div>
                   <input type="email" class="form-control" placeholder="이메일 입력" size="20" name = "muEmailId" id = "muEmailIdForm">
+                  <input type="email" class="form-control" placeholder="추가 이메일 입력" size="20" name = "muEmailId" id = "muContactEmailIdForm">
+                  <br><br>
                   <input type="password" class="form-control" placeholder="비밀번호 입력" size="20" name = "muPassword" id = "muPasswordForm">
                   <!-- ajax 비동기 처리  -->
                   <input type="password" class="form-control" placeholder="비밀번호 확인" size="20" name = "muPasswordConfirm" id = "muPasswordConfirmForm">
                     <div id = "muResultForm"></div>
-                  <br><br>
-                  
-                  <div id="muExistNicknameResult"></div>
-                  <input type="text" class="form-control" placeholder="닉네임 입력" size="20" name = "muNickname" id="muNicknameForm">
-                   <input type="email" class="form-control" placeholder="접속 이메일 입력" size="20" name = "muEmailId" id = "muContactEmailIdForm">
-                   <input type="text" class="form-control" placeholder="주민번호  앞 7자리 입력"  size="20" name = "muBirth" id = "muBirthForm" maxlength = 7>
+                   
+                   
 				  <br><br>
                   <textarea id="signUpPolicyArea" rows="10" disabled="disabled" >
                   제 1 조 (목적)
@@ -514,7 +514,7 @@
    
    <br>
    <div id="signUpBottomDiv">
-      <p>Fleax 회원 이신가요?<br>
+      <p>RE:CALL 회원 이신가요?<br>
       <a href="/fleax/jsp/loginPage.jsp">지금 로그인하세요</a></p>
    </div> <!-- end of signUpBottomDiv -->
     

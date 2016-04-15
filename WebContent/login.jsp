@@ -232,7 +232,7 @@
 							<input type = "hidden" name = "checkUser" value = "mu" id ="checkUserType">
 			                <div class="tab-pane fade in active" id="attendantLogin">
 			                
-			                  <button id="facebookLoginBtn" type="button" class="btn btn-primary btn-block">페이스북으로 Login 하기</button>
+			                  <button id="facebookLoginBtn" type="button" class="btn btn-primary btn-block">페이스북으로 RE:CALL 하기</button>
 			                  <br><br> 
 			                  <input type="email" class="form-control"  name="attendantId" placeholder="이메일  아이디 입력" size="20" id ="attendentIdForm">
 			                  <input type="password" class="form-control" name="attendantPassword" placeholder="비밀번호 입력" size="20" id = attendantPwdForm>
@@ -262,7 +262,7 @@
 		   
 		   <div id="loginBottomDiv">
 		      <p>아이디가 없으신가요?<br>
-		      <a href="<%=request.getContextPath()%>/jsp/signUpPage.jsp">지금 가입하세요</a></p>
+		      <a href="<%=request.getContextPath()%>/jsp/signUpPage_2.jsp">지금 가입하세요</a></p>
 		   </div>
 		
 		</div> <!--End of #all -->
