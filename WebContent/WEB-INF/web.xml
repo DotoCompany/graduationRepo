@@ -19,4 +19,14 @@
     <servlet-name>FirstServlet</servlet-name>
     <url-pattern>/FirstServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterServlet</display-name>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>controller.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register.do</url-pattern>
+  </servlet-mapping>
 </web-app>

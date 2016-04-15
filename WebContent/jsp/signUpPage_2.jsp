@@ -6,8 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<script src="<%=request.getContextPath()%>/js/jquery-1.11.3.js"></script>
+<!-- jquery -->
+<script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
+<!-- 회원가입 script -->
 <script src = "<%=request.getContextPath()%>/js/signUpPage.js" type="text/javascript" charset = "utf-8"></script>
+
+
 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -321,6 +325,7 @@
                	  <div id="mmExistResult"></div>
                   <input type="email" class="form-control" placeholder="이메일입력" size="20" name = "mmEmailId" id = "mmEmailIdForm">
                   <input type="password" class="form-control" placeholder="비밀번호 입력" size="20" name = "mmPassword" id = "mmPasswordForm">
+                  
                   <!-- ajax비동기 처리 -->
                   <input type="password" class="form-control" placeholder="비밀번호 확인" size="20" name = "mmPasswordConfirm" id = "mmPasswordConfirmForm">
                   <div id = "mmResultForm"></div>
