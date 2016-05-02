@@ -9,7 +9,7 @@
 	<!-- imported sources -->
    	
    	<!-- jQuery -->
-	<script src="<%=request.getContextPath()%>/common/js/jquery-1.11.3.js"></script>
+	<script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
     <!-- Bootstrap Core CSS -->
     <link href="<%=request.getContextPath()%>/common/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Core JavaScript -->
