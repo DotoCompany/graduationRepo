@@ -17,7 +17,11 @@ public class UserDAO {
 		return userDAO;
 	}
 	private UserDAO(){
-		conn = DBConnection.getInstance().getConn();
+		try {
+			conn = DBConnection.getInstance().getConn();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	/**
 	 * User¡§∫∏ input method.

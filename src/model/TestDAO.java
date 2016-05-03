@@ -18,7 +18,11 @@ public class TestDAO {
 	 */
 	private Connection conn;
 	public TestDAO() {
-		conn = DBConnection.getInstance().getConn();
+		try {
+			conn = DBConnection.getInstance().getConn();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	public String[] searchDatabases() {
 		String sql = "show databases;";
