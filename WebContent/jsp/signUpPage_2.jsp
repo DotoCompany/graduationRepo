@@ -143,13 +143,13 @@
                   <br><br> 
                   
                   <div id="muExistNicknameResult"></div>
-                  <input type="text" class="form-control" placeholder="이름 입력" size="20" name = "muNickname" id="muNicknameForm">
+                  <input type="text" class="form-control" placeholder="이름 입력" size="20" name = "name" id="muNicknameForm">
                   <div id="muExistResult"></div>
-                  <input type="email" class="form-control" placeholder="이메일 입력" size="20" name = "muEmailId" id = "muEmailIdForm">
+                  <input type="email" class="form-control" placeholder="이메일 입력" size="20" name = "email" id = "muEmailIdForm">
                   <br><br>
-                  <input type="password" class="form-control" placeholder="비밀번호 입력" size="20" name = "muPassword" id = "muPasswordForm">
+                  <input type="password" class="form-control" placeholder="비밀번호 입력" size="20" name = "password" id = "muPasswordForm">
                   <!-- ajax 비동기 처리  -->
-                  <input type="password" class="form-control" placeholder="비밀번호 확인" size="20" name = "muPasswordConfirm" id = "muPasswordConfirmForm">
+                  <input type="password" class="form-control" placeholder="비밀번호 확인" size="20" name = "passwordComfirm" id = "muPasswordConfirmForm">
                     <div id = "muResultForm"><span id="muResultFormSpan"></span></div>
                     <input type="hidden" id="passwordCheckHiddenTag" value="false">
                    

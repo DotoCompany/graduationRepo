@@ -2,6 +2,7 @@ package DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.DBConnection;
@@ -19,6 +20,7 @@ public class UserDAO {
 	private UserDAO(){
 		conn = DBConnection.getInstance().getConn();
 	}
+	
 	/**
 	 * User정보 input method.
 	 * @param userVO
@@ -79,5 +81,36 @@ public class UserDAO {
 			}
 		} // finally end
 		return success;
+	}
+	/**
+	 * 아마도, 로그인 시 사용하게 될 search 메소드일 듯 합니다.
+	 * @param email 사용자 이메일
+	 * @param password 사용자 비밀번호
+	 * @return 사용자 이메일과 비밀번호에 매칭되는 값
+	 */
+	public UserDTO searchUserByEmailAndPassword(String email,String password) {
+		PreparedStatement pstmt = null;
+		UserDTO userDTO = null;
+		ResultSet rs = null;
+		try {
+			String sql = "select * from user_tb where email=? and password = ?;";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,email);
+			pstmt.setString(2, password);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				userDTO = new UserDTO(rs.getString("email"),rs.getString("name"),rs.getString("password"));
+			}
+		} catch ( Exception ex ) {
+			ex.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				rs.close();
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		return userDTO;
 	}
 }
