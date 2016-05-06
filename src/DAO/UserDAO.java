@@ -59,9 +59,11 @@ public class UserDAO {
 	public byte insertUser(String email,String name,String password) {
 		PreparedStatement pstmt = null;
 		Connection conn = null;
+		
 		byte success = 0;
 		try {
 			conn = DBConnection.getInstance().getConn();
+			conn.setAutoCommit(false);
 			String sql = " insert into user_tb (email,name,password,reg_date) values(?,?,?,now());";
 			pstmt = conn.prepareStatement(sql);
 			/*아랫줄은 PreparedStatement객체에 값을 대입해주는 코드들이다.*/
