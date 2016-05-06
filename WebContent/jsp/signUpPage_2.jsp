@@ -154,7 +154,7 @@
                     <input type="hidden" id="passwordCheckHiddenTag" value="false">
                    
                    
-				  <br><%=request.getContextPath()%><br>
+				  <br> <%--<%=request.getContextPath()--%><br>
                   <textarea id="signUpPolicyArea" rows="10" disabled="disabled" >
                   제 1 조 (목적)
 
