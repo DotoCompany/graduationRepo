@@ -3,23 +3,23 @@ package model;
 import java.io.Serializable;
 
 public class UserDTO implements Serializable{
-	private String email;
+	private String emailId;
 	private String name;
-	private String password;
+	private String pwd;
 	public UserDTO() {
 		super();
 	}
-	public UserDTO(String email, String name, String password) {
+	public UserDTO(String emailId, String name, String pwd) {
 		super();
-		this.email = email;
+		this.emailId = emailId;
 		this.name = name;
-		this.password = password;
+		this.pwd = pwd;
 	}
-	public String getEmail() {
-		return email;
+	public String getEmailId() {
+		return emailId;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
 	}
 	public String getName() {
 		return name;
@@ -27,11 +27,16 @@ public class UserDTO implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPassword() {
-		return password;
+	public String getPwd() {
+		return pwd;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
+	@Override
+	public String toString() {
+		return "UserDTO [emailId=" + emailId + ", name=" + name + ", pwd=" + pwd + "]";
+	}
+	
 	
 }
