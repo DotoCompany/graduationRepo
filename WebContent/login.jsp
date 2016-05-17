@@ -6,6 +6,13 @@
 <head>
 	<meta charset=UTF-8">
 		
+		
+	<!-- customized sources -->
+		
+	<script src = "<%=request.getContextPath()%>/js/loginPage.js" type="text/javascript" charset = "utf-8"></script>	
+		
+		
+		
 	<!-- imported sources -->
    	
    	<!-- jQuery -->
@@ -227,15 +234,16 @@
 		      <div class="col-md-4">
 		         <div id="loginInFrame">
 		         
-       				 <form action="<%=request.getContextPath()%>/login" method="post"  id="loginform">
+       				 <%-- <form action="<%=request.getContextPath()%>/login.do" method="post"  id="loginForm"> --%>
+       				 <form action="<%=request.getContextPath()%>/test.jsp" method="post"  id="loginForm">
 			            <div id="content" class="tab-content">
 							<input type = "hidden" name = "checkUser" value = "mu" id ="checkUserType">
 			                <div class="tab-pane fade in active" id="attendantLogin">
 			                
 			                  <button id="facebookLoginBtn" type="button" class="btn btn-primary btn-block">페이스북으로 RE:CALL 하기</button>
 			                  <br><br> 
-			                  <input type="email" class="form-control"  name="attendantId" placeholder="이메일  아이디 입력" size="20" id ="attendentIdForm">
-			                  <input type="password" class="form-control" name="attendantPassword" placeholder="비밀번호 입력" size="20" id = attendantPwdForm>
+			                  <input type="email" class="form-control"  name="loginId" placeholder="이메일  아이디 입력" size="20" id ="loginId">
+			                  <input type="password" class="form-control" name="loginPwd" placeholder="비밀번호 입력" size="20" id = "loginPwd">
 			                </div>
 							<!-- 
 			                <div class="tab-pane fade" id="hostLogin">

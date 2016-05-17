@@ -26,6 +26,7 @@ window.onload = function() {
 	}
 	/*submit하기 전에 data들이 잘 들어 왔는지 check */
 	function checkRegisterNecessaryCondition(){
+		
 		if($("#muNicknameForm").val()=="") {
 			alert("이름를 입력해 주세요.");
 			$("#muNicknameForm").tooltip({content:"이름을 입력해 주세요!"});
@@ -46,6 +47,7 @@ window.onload = function() {
 			$("#muResultFormSpan").focus();
 			return;
 		}
+		
 		$("#signUpForm").submit();
 		
 	}

@@ -112,7 +112,7 @@ public class UserDAO {
 			pstmt.setString(2, pwd);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				userDTO = new UserDTO(rs.getString("email_id"),rs.getString("name"),rs.getString("pwd"));
+				userDTO = new UserDTO(rs.getString("u_id"), rs.getString("email_id"),rs.getString("name"),rs.getString("pwd"));
 			}
 		} catch ( Exception ex ) {
 			ex.printStackTrace();
