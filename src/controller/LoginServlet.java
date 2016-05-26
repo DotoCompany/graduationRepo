@@ -26,14 +26,23 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
+		response.setContentType("application/json;charset=utf-8");
 		//System.out.println("로긴 와쪙");
 		String loginId = request.getParameter("loginId");
 		String loginPwd = request.getParameter("loginPwd");
+		
+		String userAgent = request.getHeader("User-Agent");
+		System.out.println("userAgent = "+userAgent);
+		
+		
+		
+		System.out.println("요청온 아이디 : "+loginId);
+		System.out.println("요청온 패스워드 : "+loginPwd);
 		//System.out.println(loginId + " : " + loginPwd);
 		UserDAO userDAO = UserDAO.getInstance();
 		UserDTO userDTO = userDAO.searchUserByEmailAndPassword(loginId, loginPwd);
 		
-		response.setContentType("application/json;charset=utf-8");
+		
 		
 		if (userDTO != null) {
 			// 로그인 회원이 존재할 경우 (정상 처리)
