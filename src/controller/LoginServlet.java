@@ -26,12 +26,20 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
-		//System.out.println("·Î±ä ¿Í¥’");
+		
+		
+		String userAgent = request.getHeader("User-Agent");
+		System.out.println(userAgent);
+		
+		
+		
+		
 		String loginId = request.getParameter("loginId");
 		String loginPwd = request.getParameter("loginPwd");
-		//System.out.println(loginId + " : " + loginPwd);
 		UserDAO userDAO = UserDAO.getInstance();
 		UserDTO userDTO = userDAO.searchUserByEmailAndPassword(loginId, loginPwd);
+		
+		
 		
 		response.setContentType("application/json;charset=utf-8");
 		
