@@ -1,6 +1,9 @@
 
 window.onload = function() {
 	
+	if('${isLogin eq "false"}' == 'true') {
+		alert("로그인 실패했습니다!!");
+	}
 	function getContextPath() {
 		var hostIndex = location.href.indexOf( location.host ) + location.host.length;
 		return location.href.substring( hostIndex, location.href.indexOf('/', hostIndex + 1) );
@@ -21,8 +24,8 @@ window.onload = function() {
 			return;
 		}
 		
-		var frm = $('#loginForm');
-		$.ajax({
+		$('#loginForm').submit();
+		/*$.ajax({
 		    type: 'post',
 		    // make sure you respect the same origin policy with this url:
 		    // http://en.wikipedia.org/wiki/Same_origin_policy
@@ -39,7 +42,7 @@ window.onload = function() {
 		        //window.location.href='/test.jsp';
 		    	login(data);
 		    }
-		});
+		});*/
 		
 		//$("#loginForm").submit();
 	}

@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+* {
+	font-famil: 돋움, dotum, sans-serif;
+	font-size: 12px;
+	margin: 0 auto;
+}
+.all {
+	
+	margin: 0 auto;
+	width: 80%;
+}
+#all {
+	
+	width: 832px;
+	margin: 0 auto;
+}
+.loginContentDiv {
+	border-bottom: 2px solid #ddd;
+	padding-bottom: 5em;
+}
+#loginBtn{
+	width:100%;
+}
+
+#signUpBtn {
+	min-width: 80px;
+	max-width: 80px;
+}
+
+#loginInFrame {
+	text-align: center;
+}
+
+#loginDes {
+	float: right;
+}
+
+
+
+.tab-content {
+	padding-top: 5em;
+}
+
+#loginBottomDiv {
+	text-align: center;
+}
+#loginMainImg {
+	
+	width: 100%;
+	height: 280px;
+}
+#loginPageLogo {
+	background-image: url("../image/recall_logo_200x200.png");
+	width: 200px;
+	height: 200px;
+	object-fit:contain;
+	
+}
+.login_description {
+	text-align: center;
+}
