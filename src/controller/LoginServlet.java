@@ -28,24 +28,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
-<<<<<<< HEAD
-		
-		
-		String userAgent = request.getHeader("User-Agent");
-		System.out.println(userAgent);
-		
-		
-		
-		
-		String loginId = request.getParameter("loginId");
-		String loginPwd = request.getParameter("loginPwd");
-		UserDAO userDAO = UserDAO.getInstance();
-		UserDTO userDTO = userDAO.searchUserByEmailAndPassword(loginId, loginPwd);
-		
-		
-		
-		response.setContentType("application/json;charset=utf-8");
-=======
+
 		response.setContentType("application/json;charset=utf-8");
 		//System.out.println("로긴 와쪙");
 		String loginId = request.getParameter("loginId");
@@ -63,7 +46,6 @@ public class LoginServlet extends HttpServlet {
 		UserDAO userDAO = UserDAO.getInstance();
 		UserDTO userDTO = userDAO.searchUserByEmailAndPassword(loginId, loginPwd);
 		
->>>>>>> 78b0f2b14f559ff45cbcbbb99826201f4c83bd22
 		
 		JSONObject loginJson = new JSONObject();
 		/*---------------모바일을 사용하는 경우 --------------------*/
