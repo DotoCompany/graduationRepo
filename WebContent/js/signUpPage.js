@@ -21,6 +21,11 @@ window.onload = function() {
 	$("#signUpBtn1").click(checkRegisterNecessaryCondition);
 	/*비밀번호 확인란에 비밀번호 입력할 시 비밀번호가 맞는지 아닌지를 체크해주는 함수.*/
 	function checkPassword() {
+		if($("#muPasswordForm").val()=="")
+			return;
+		else if($("#muPasswordConfirmForm").val()=="")
+			return;
+		
 		if($("#muPasswordForm").val()==$("#muPasswordConfirmForm").val()){ // 비밀번호 입력과 비밀번호 확인란에 작성한 비밀번호가 같을 경우.
 			$("#muResultFormSpan").text("비밀번호가 일치합니다.");
 			$("#passwordCheckHiddenTag").val("true");
