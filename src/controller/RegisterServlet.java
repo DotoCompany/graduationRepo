@@ -6,7 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.plaf.synth.SynthSeparatorUI;
+
+import org.json.simple.JSONObject;
 
 import DAO.UserDAO;
 
@@ -28,17 +29,41 @@ public class RegisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
-		System.out.println("Á¹·É");
+		response.setContentType("application/json;charset=utf-8");
+		
 		String email = request.getParameter("email");
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
+		
 		UserDAO userDAO = UserDAO.getInstance();
 		int resultCode = userDAO.insertUser(email,name,password);
-		if(resultCode==1)
-			System.out.println("insert ¼º°ø");
-		else
-			System.out.println("insert fail");
-		request.getRequestDispatcher("login.jsp").forward(request, response);
+		
+		String userAgent = request.getHeader("User-Agent").split("/")[0];
+		
+		
+		if(userAgent.equals("okhttp")) {
+			JSONObject registerJson = new JSONObject();
+			if(resultCode==1)
+				registerJson.put("resultCode", "1");
+			else
+				registerJson.put("resultCode","0");
+			return ;
+		}
+		else {
+			if ( resultCode == 1 ) {
+				request.setAttribute("isRegister", "true");
+				request.getRequestDispatcher("login.jsp").forward(request, response);
+			}
+			else {
+				request.setAttribute("isRegister", "false");
+				request.getRequestDispatcher("sign_up.jsp");
+			}
+			
+			
+		}
+		
+		
+		
 	}
 
 }

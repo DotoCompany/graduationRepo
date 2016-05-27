@@ -13,7 +13,8 @@
 
 
 <!-- imported sources -->
-
+<!-- jstl -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- jQuery -->
 <script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
 <!-- Bootstrap Core JavaScript -->
@@ -44,7 +45,7 @@
 							<div class="col-md-4"></div>
 							<div class="col-md-4">
 								<div id="loginInFrame">
-									<form action="<%=request.getContextPath()%>/test.jsp" method="post" id="loginForm">
+									<form action="login.do" method="post" id="loginForm">
 										<div id="content" class="tab-content">
 											<input type="hidden" name="checkUser" value="mu"
 												id="checkUserType">
@@ -82,7 +83,7 @@
 						<p>
 							아이디가 없으신가요?
 							<br/> 
-							<a href="<%=request.getContextPath()%>/jsp/sign_up.jsp">지금 가입하세요</a>
+							<a href="<%=request.getContextPath()%>/sign_up.jsp">지금 가입하세요</a>
 						</p>
 					</div>
 				</div>

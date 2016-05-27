@@ -2,6 +2,12 @@
  * Creator : kwongyo
  */
 window.onload = function() {
+	if ('${isRegister eq "false"}'=='false') {
+		alert("회원가입에 실패했습니다.");
+	}
+	if ('${isRegister eq "false"}'=='true') {
+		alert("회원가입 성공했습니다.");
+	}
 	/*이메일이 회원가입 되어 있는지 안되어 있는지 check~*/
 	$("#muEmailIdForm").focusout(function() {
 		

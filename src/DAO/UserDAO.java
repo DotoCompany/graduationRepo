@@ -5,8 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import DTO.UserDTO;
 import model.DBConnection;
-import model.UserDTO;
 
 public class UserDAO {
 	
