@@ -9,12 +9,12 @@
 <!-- jquery -->
 <script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
 <!-- 회원가입 script -->
-<script src="<%=request.getContextPath()%>/js/signUpPage.js"
+<script src="<%=request.getContextPath()%>/js/signUp.js"
 	type="text/javascript" charset="utf-8"></script>
 
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/css/sign.css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/signUp.css"/>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script

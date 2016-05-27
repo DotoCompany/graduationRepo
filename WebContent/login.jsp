@@ -8,7 +8,7 @@
 
 
 <!-- customized sources -->
-<script src="<%=request.getContextPath()%>/js/loginPage.js" type="text/javascript" charset="utf-8"></script>
+<script src="<%=request.getContextPath()%>/js/login.js" type="text/javascript" charset="utf-8"></script>
 
 
 
@@ -83,7 +83,7 @@
 						<p>
 							아이디가 없으신가요?
 							<br/> 
-							<a href="<%=request.getContextPath()%>/sign_up.jsp">지금 가입하세요</a>
+							<a href="<%=request.getContextPath()%>/signUp.jsp">지금 가입하세요</a>
 						</p>
 					</div>
 				</div>

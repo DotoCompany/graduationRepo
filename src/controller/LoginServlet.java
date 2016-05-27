@@ -14,7 +14,7 @@ import org.json.simple.JSONObject;
 
 import DAO.UserDAO;
 import DTO.UserDTO;
-import model.SessionManager;
+import manager.SessionManager;
 
 /**
  * Servlet implementation class LoginServlet
