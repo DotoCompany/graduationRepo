@@ -7,9 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import manager.UserManager;
+
 import org.json.simple.JSONObject;
 
 import DAO.UserDAO;
+import DTO.UserDTO;
 
 /**
  * Servlet implementation class RegisterServlet
@@ -35,12 +38,12 @@ public class RegisterServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		
-		UserDAO userDAO = UserDAO.getInstance();
-		int resultCode = userDAO.insertUser(email,name,password);
+		UserManager userM = UserManager.getInstance();
+		int resultCode = userM.insertUser(email,name,password);
 		
 		String userAgent = request.getHeader("User-Agent").split("/")[0];
 		
-		
+		/*---------------모바일 앱 --------------------*/
 		if(userAgent.equals("okhttp")) {
 			JSONObject registerJson = new JSONObject();
 			if(resultCode==1)
@@ -49,6 +52,7 @@ public class RegisterServlet extends HttpServlet {
 				registerJson.put("resultCode","0");
 			return ;
 		}
+		/*---------------웹 브라우저 --------------------*/
 		else {
 			if ( resultCode == 1 ) {
 				request.setAttribute("isRegister", "true");

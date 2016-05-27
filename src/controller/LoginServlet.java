@@ -10,11 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import manager.SessionManager;
+import manager.UserManager;
+
 import org.json.simple.JSONObject;
 
-import DAO.UserDAO;
 import DTO.UserDTO;
-import manager.SessionManager;
 
 /**
  * Servlet implementation class LoginServlet
@@ -42,10 +43,10 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("요청온 아이디 : "+loginId);
 		System.out.println("요청온 패스워드 : "+loginPwd);
 		
+		UserManager userM = UserManager.getInstance();
+		UserDTO userDTO = userM.getUser(loginId, loginPwd);
 		
-		UserDAO userDAO = UserDAO.getInstance();
-		UserDTO userDTO = userDAO.searchUserByEmailAndPassword(loginId, loginPwd);
-		
+		System.out.println(" userDTO : " + userDTO);
 		
 		JSONObject loginJson = new JSONObject();
 		/*---------------모바일을 사용하는 경우 --------------------*/
