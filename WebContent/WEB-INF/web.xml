@@ -45,4 +45,14 @@
     <res-type>javax.sql.DataSource</res-type>
     <res-auth>Container</res-auth>
   </resource-ref>
+  <servlet>
+    <description></description>
+    <display-name>MarkerServlet</display-name>
+    <servlet-name>MarkerServlet</servlet-name>
+    <servlet-class>controller.MarkerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MarkerServlet</servlet-name>
+    <url-pattern>/marker.do</url-pattern>
+  </servlet-mapping>
 </web-app>

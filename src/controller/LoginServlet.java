@@ -63,6 +63,7 @@ public class LoginServlet extends HttpServlet {
 				loginJson.put("resultCode", "0");
 				loginJson.put("errorCode", "");
 				loginJson.put("errorDescription", "");
+				
 			} finally {
 				PrintWriter pw = response.getWriter();
 				pw.print(loginJson.toString());
@@ -92,7 +93,8 @@ public class LoginServlet extends HttpServlet {
 	         {
 	            oldSession.invalidate();
 	         }
-	         request.getRequestDispatcher("main.jsp").forward(request, response);
+	         //request.getRequestDispatcher("main.jsp").forward(request, response);
+	         request.getRequestDispatcher("googleMapTest.jsp").forward(request, response);
 		} catch(Exception ex) {
 			request.setAttribute("isLogin", "false");
 			RequestDispatcher rd=request.getRequestDispatcher("login.jsp");

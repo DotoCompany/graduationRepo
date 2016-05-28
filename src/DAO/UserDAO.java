@@ -4,11 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
+import model.DBConnection;
 import util.crypt.BCrypt;
 import util.crypt.SHA256;
 import DTO.UserDTO;
-import model.DBConnection;
 
 public class UserDAO {
 	
@@ -44,10 +45,11 @@ public class UserDAO {
         	String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
 			
 			
-			String sql = " insert into user_tb (email_id,name,pwd,reg_date) values(?,?,?,now());";
+			String sql = " insert into user_tb (email_id,name,pwd,reg_date) values(?,?,?,?);";
 			pstmt = conn.prepareStatement(sql);
 			/*아랫줄은 PreparedStatement객체에 값을 대입해주는 코드들이다.*/
 			pstmt.setString(1, userDTO.getEmailId());pstmt.setString(2, userDTO.getName());pstmt.setString(3, bcPass);
+			pstmt.setString(4, new Timestamp(new java.util.Date().getTime()).toString());
 			success = (byte)pstmt.executeUpdate();
 			conn.commit();
 		} catch (SQLException e ) {
@@ -95,13 +97,12 @@ public class UserDAO {
 			String orgPass = pwd;
             String shaPass = sha.getSha256(orgPass.getBytes());
         	String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
-			
-        	System.out.println(" bcPass : " + bcPass);
         	
-			String sql = " insert into user_tb (email_id,name,pwd,reg_date) values(?,?,?,now());";
+			String sql = " insert into user_tb (email_id,name,pwd,reg_date) values(?,?,?,?);";
 			pstmt = conn.prepareStatement(sql);
 			/*아랫줄은 PreparedStatement객체에 값을 대입해주는 코드들이다.*/
 			pstmt.setString(1, email);pstmt.setString(2, name);pstmt.setString(3, bcPass);
+			pstmt.setString(4, new Timestamp(new java.util.Date().getTime()).toString());
 			success = (byte)pstmt.executeUpdate();
 			
 			conn.commit();
@@ -153,7 +154,7 @@ public class UserDAO {
 		try {
 			conn = DBConnection.getInstance().getConn();
 			
-			/* Decryption */
+			/* 유저로부터 입력받은 pwd를 1차 암호화 */
 			String orgPass = pwd;
             String shaPass = sha.getSha256(orgPass.getBytes());
 			
@@ -162,12 +163,11 @@ public class UserDAO {
 			pstmt.setString(1,email);
 			rs = pstmt.executeQuery();
 			
-			System.out.println(" shaPass : " + shaPass);
-			
 			if (rs.next()) {
 			
 				String dbPwd = rs.getString("pwd");
-				System.out.println(" dbPwd : " + dbPwd);
+				
+				/*유저로부터 입력받은 pwd와 DB의 pwd를 비교 */
 				if(BCrypt.checkpw(shaPass,dbPwd)) {
 					userDTO = new UserDTO(rs.getString("u_id"), rs.getString("email_id"),rs.getString("name"),dbPwd,rs.getString("reg_date"));
 				}
@@ -179,6 +179,7 @@ public class UserDAO {
 			try {
 				pstmt.close();
 				rs.close();
+				conn.close();
 			} catch(Exception ex) {
 				ex.printStackTrace();
 			}

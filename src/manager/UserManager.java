@@ -1,7 +1,5 @@
 package manager;
 
-import java.sql.SQLException;
-
 import DAO.UserDAO;
 import DTO.UserDTO;
 
