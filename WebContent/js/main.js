@@ -6,7 +6,7 @@ window.onload = function() {
 		// http://en.wikipedia.org/wiki/Same_origin_policy
 		url : $('#contextPath').val() + '/marker.do',
 		data : {
-			uId : '2'
+			uId : '1'
 		},
 		dataType : 'json',
 		error : function() {
