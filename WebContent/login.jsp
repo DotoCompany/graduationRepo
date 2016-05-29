@@ -1,94 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
-
 <head>
-<meta charset=UTF-8">
-
-
-<!-- customized sources -->
-<script src="<%=request.getContextPath()%>/js/login.js" type="text/javascript" charset="utf-8"></script>
-
-
-
-<!-- imported sources -->
-<!-- jstl -->
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- jQuery -->
 <script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="<%=request.getContextPath()%>/common/js/bootstrap.min.js"></script>
-<!-- Bootstrap Core CSS -->
-<link href="<%=request.getContextPath()%>/common/css/bootstrap.min.css" rel="stylesheet">
-<!-- Login about CSS -->
-<link href="<%=request.getContextPath()%>/css/login.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/login.css">
 
-	<title>RE:CALL Sign-in</title>
+<title>RE:CALL</title>
+
 </head>
 <body>
-	<div class="container">
-		<div id="all">
-		<br/>
-		<br/>
-			<!-- 여기부터 화면에 그려지는 영역. -->
-			<div class="jumbotron" id="loginMain">
-			<p class="login_description">당신의 특별한 서비스</p>
-			<p class="login_description">RE:CALL</p>
-			
-				<div id="loginPageLogo" ></div>
-				<div class="row">
-					
-					<div class="row"></div>
-					<div class="loginContentDiv">
-						<div class="row">
-							<div class="col-md-4"></div>
-							<div class="col-md-4">
-								<div id="loginInFrame">
-									<form action="login.do" method="post" id="loginForm">
-										<div id="content" class="tab-content">
-											<input type="hidden" name="checkUser" value="mu"
-												id="checkUserType">
-											<div class="tab-pane fade in active" id="attendantLogin">
+	<form action="login.do" id="loginForm" method="post" class="main_div">
+		<div id="logo_div">
+			<img id="logo" src="<%=request.getContextPath()%>/image/logo.png" />
+		</div>
 
-												
-												<br>
-												<br> <input type="email" class="form-control"
-													name="loginId" placeholder="이메일  아이디 입력" size="20"
-													id="loginId"> <input type="password"
-													class="form-control" name="loginPwd" placeholder="비밀번호 입력"
-													size="20" id="loginPwd">
-											</div>
+		<div id="comment_div">
+			<p class="comment">
+				Special service for you<br>RE:CALL
+			</p>
+		</div>
 
-										</div>
-										<br>
-										<br>
-										<div id="loginResultDiv"></div>
-										<button id="facebookLoginBtn" type="button" class="btn btn-primary btn-block">페이스북으로 RE:CALL하기</button>
-										<br/>
-										<br/>
-										<button type="button" id="loginBtn" class="btn btn-success">로 그 인</button>
-									</form>
+		<div id="facebook_div">
+			<input class="facebook_bt" type="submit" value="Join with Facebook" />
+		</div>
 
-								</div>
+		<div id="login_div">
+			<input class="login_input" name="loginId" id="loginId" type="email" placeholder="E-mail" /><br>
+			<input class="login_input" name="loginPwd" id="loginPwd" type="password" placeholder="Password" />
+		</div>
 
-							</div>
-							<div class="col-md-4"></div>
-						</div>
-					</div>
+		<div id="forgot_div">
+			<a href="" class="a_tag">Forgot password</a>
+		</div>
 
-					<br>
+		<div id="login_bt_div">
+			<input type="submit" id="loginBtn" class="normal_bt" value="Login" />
+		</div>
 
-					<div id="loginBottomDiv">
-						<p>
-							아이디가 없으신가요?
-							<br/> 
-							<a href="<%=request.getContextPath()%>/signUp.jsp">지금 가입하세요</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			
+		<div id="bottom_div">
+			<p class="bottom_comment">
+				No account yet?<br> <a href="<%=request.getContextPath()%>/register.jsp" class="a_tag">Register now</a>
+			</p>
+		</div>
+	</form>
 </body>
-
 </html>
