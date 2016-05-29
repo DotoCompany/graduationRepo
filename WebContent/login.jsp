@@ -6,6 +6,7 @@
 <head>
 <script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/login.css">
 
 <title>RE:CALL</title>
