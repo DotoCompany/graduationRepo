@@ -35,7 +35,7 @@ public class MarkerServlet extends HttpServlet {
 		// DB에서 유저별로 Marker를 가져와
 		// json으로 변환
 		JSONObject json = MarkerJson.getInstance()
-							.createJson(MarkerManager.getInstance().getMarkerByUser(uId));
+							.createJson(MarkerManager.getInstance().getMarkerByUser(uId), uId);
 
 		
 		PrintWriter pw = response.getWriter();

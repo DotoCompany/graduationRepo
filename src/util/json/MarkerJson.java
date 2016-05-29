@@ -21,7 +21,7 @@ public class MarkerJson {
 		return instance;
 	}
 	
-	public JSONObject createJson(List<MarkerDTO> markerList) {
+	public JSONObject createJson(List<MarkerDTO> markerList, String uId) {
 		
 		JSONObject json = null;
 		
@@ -38,7 +38,7 @@ public class MarkerJson {
 				
 				json.put("resultCode", "1");
 				json.put("timestamp", System.currentTimeMillis());
-				json.put("uID", markerList.get(0).getuId());
+				json.put("uID", uId);
 				
 				for(MarkerDTO marker : markerList) {
 					
