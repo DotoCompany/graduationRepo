@@ -42,9 +42,14 @@ public class RegisterServlet extends HttpServlet {
 		int resultCode = userM.insertUser(email,name,password);
 		
 		String userAgent = request.getHeader("User-Agent").split("/")[0];
+		System.out.println("email : "+email);
+		System.out.println("name : "+name);
+		System.out.println("password : "+password);
+		System.out.println("userAgent : "+userAgent);
 		
 		/*---------------¸ð¹ÙÀÏ ¾Û --------------------*/
 		if(userAgent.equals("okhttp")) {
+			System.out.println("if_okhttp");
 			JSONObject registerJson = new JSONObject();
 			if(resultCode==1)
 				registerJson.put("resultCode", "1");

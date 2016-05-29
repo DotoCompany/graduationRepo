@@ -65,6 +65,7 @@ public class LoginServlet extends HttpServlet {
 				loginJson.put("errorDescription", "");
 				
 			} finally {
+				
 				PrintWriter pw = response.getWriter();
 				pw.print(loginJson.toString());
 				pw.close();

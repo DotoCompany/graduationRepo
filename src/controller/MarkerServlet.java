@@ -31,11 +31,12 @@ public class MarkerServlet extends HttpServlet {
 		//String userAgent = request.getHeader("User-Agent").split("/")[0];
 		
 		String uId = request.getParameter("uId");
-		
+
 		// DB에서 유저별로 Marker를 가져와
 		// json으로 변환
 		JSONObject json = MarkerJson.getInstance()
 							.createJson(MarkerManager.getInstance().getMarkerByUser(uId));
+
 		
 		PrintWriter pw = response.getWriter();
 		pw.print(json.toString());
