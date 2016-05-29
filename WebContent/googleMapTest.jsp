@@ -16,7 +16,7 @@
 <!-- jQuery -->
 <script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.11&sensor=false" type="text/javascript"></script>
+
 
 <style>
 html, body {
@@ -45,7 +45,8 @@ html, body {
 
 
 	<script src="<%=request.getContextPath()%>/js/main.js" type="text/javascript" charset="utf-8"></script>
-
+	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv59_KYHHzRqtky9EwzOJ7WY-Pb5XMGlc"
+  type="text/javascript"></script>
 </body>
 
 </html>
