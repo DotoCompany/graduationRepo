@@ -34,6 +34,12 @@ public class MarkerServlet extends HttpServlet {
 		
 		String uId = request.getParameter("uId");
 		
+		String userAgent = request.getHeader("User-Agent").split("/")[0];
+		if(userAgent.equals("okhttp")) {
+			System.out.println("okhttp_marmerServletø‰√ª");
+			
+		}
+		
 		JSONObject json = null;//new JSONObject();
 		JSONObject markerJson = null;
 		JSONObject markerWrap = null;
