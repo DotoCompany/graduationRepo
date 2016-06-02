@@ -79,7 +79,7 @@ window.onload = function() {
 		var date = new Date(Date.parse(m_time)).toUTCString();
 		var btnHref = contextPath + '/test.jsp?m_id=' + m_id + '&latlng=' + latlng;
 		
-		alert(btnHref);
+		/*alert(btnHref);*/
 
 		infoWindow = new google.maps.InfoWindow();
 

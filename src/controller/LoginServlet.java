@@ -94,8 +94,8 @@ public class LoginServlet extends HttpServlet {
 	         {
 	            oldSession.invalidate();
 	         }
-	         //request.getRequestDispatcher("main.jsp").forward(request, response);
-	         request.getRequestDispatcher("markerMap.jsp").forward(request, response);
+	         request.getRequestDispatcher("main.jsp").forward(request, response);
+	         //request.getRequestDispatcher("markerMap.jsp").forward(request, response);
 		} catch(Exception ex) {
 			request.setAttribute("isLogin", "false");
 			RequestDispatcher rd=request.getRequestDispatcher("login.jsp");

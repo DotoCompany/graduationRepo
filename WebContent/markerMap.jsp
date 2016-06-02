@@ -16,7 +16,7 @@
 
 
 <style>
-/* html, body {
+html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -25,7 +25,7 @@
 #map {
 	height: 100%;
 }
- */
+ 
 .normal_bt {
 	font-family: nanum-barun-gothic-regular !important;
 	background-color: #969696;

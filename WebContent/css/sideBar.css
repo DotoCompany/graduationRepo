@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-/* @font-face {
+@font-face {
     font-family: 'nanum-barun-gothic-regular';
     src: url('../font/nanumbarungothicregular.eot');
     src: url('../font/nanumbarungothicregular.eot?#iefix') format('embedded-opentype'),
@@ -11,18 +11,7 @@
     font-weight: normal;
     font-style: normal;
 }
- */
-body {
-	font-family: nanum-barun-gothic-regular !important;
-	margin: 0;
-	padding: 0;
-}
 
-.main {
-	position: absolute;
-    left:80px; top:0; right:0; bottom:0;
-}
-/* 
 #left_sideBar {
 	background-color: rgba(200,230,255,1.0);
 	position: fixed;
@@ -118,9 +107,4 @@ body {
 	left: 80px;
 	margin: 0;
 	padding: 0;
-} */
-
-#markerMap {
-	height: 100%;
-	width: 100%;
-} 
+}
