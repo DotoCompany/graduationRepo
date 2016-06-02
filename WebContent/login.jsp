@@ -5,6 +5,7 @@
 <html>
 <head>
 <%
+System.out.println(request.getSession());
 	if(request.getSession()!=null)
 		response.sendRedirect("main.jsp");
 %>
