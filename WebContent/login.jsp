@@ -5,8 +5,7 @@
 <html>
 <head>
 <%
-System.out.println(request.getSession());
-	if(request.getSession()!=null)
+	if(request.getSession().getAttribute("userCode")!=null)
 		response.sendRedirect("main.jsp");
 %>
 <script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>

@@ -32,20 +32,5 @@ public class LogoutServlet extends HttpServlet {
 	      response.sendRedirect("login.jsp");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	      
-		//logout(request,response);
-	}
-	private void logout(HttpServletRequest request,HttpServletResponse response ) throws ServletException, IOException {
-		System.out.println("LogoutSerlvet");
-		HttpSession session = request.getSession();
-		
-		session.invalidate();
-		response.sendRedirect("login.jsp");
-	}
 
 }
