@@ -54,6 +54,12 @@
 		</ul>
 	</div>
 	<!-- side bar end -->
+	
+	<div id="markerMap">
+	
+		<%@include file="markerMap.jsp" %>
+	
+	</div>
 
 
 </body>
