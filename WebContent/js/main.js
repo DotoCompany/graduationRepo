@@ -1,12 +1,14 @@
 window.onload = function() {
-
+	
+	var contextPath = $('#contextPath').val();
+	
 	$.ajax({
 		type : 'post',
 		// make sure you respect the same origin policy with this url:
 		// http://en.wikipedia.org/wiki/Same_origin_policy
-		url : $('#contextPath').val() + '/marker.do',
+		url : contextPath + '/marker.do',
 		data : {
-			uId : '1'
+			uId : $('#uId').val()
 		},
 		dataType : 'json',
 		error : function() {
@@ -71,8 +73,11 @@ window.onload = function() {
 		var marker = new google.maps.Marker({
 			map : map,
 			position : latlng,
-			title : m_time
+			title : latlng.toString()
 		});
+		
+		var date = new Date(Date.parse(m_time)).toUTCString();
+		var btnHref = contextPath + '/test.jsp?m_id=' + m_id + '&latlng=' + latlng;
 
 		infoWindow = new google.maps.InfoWindow();
 
@@ -81,13 +86,21 @@ window.onload = function() {
 			google.maps.event.addListener(marker, 'click',
 
 			function() {
-				var iwContent = '<div id="iw_container">'
-						+ '<div class="iw_title">' + m_time + '</div>'
-						+ '<div class="iw_content">' + addr + '<br />'
-						+ '</div></div>';
+				var contentString = '<div id="content">'+
+			      '<div id="siteNotice">'+
+			      '</div>'+
+			      '<h1 id="firstHeading" class="firstHeading">' +  date + '</h1>'+
+			      '<div id="bodyContent">'+
+			      '<p><b>' + latlng + '</b></p>' +
+			      '<input type=button class="normal_bt" value="편집" onclick="window.location.href=\'' +
+			      
+			      btnHref + '\'"/>' +
+			      
+			      '</div>'+
+			      '</div>';
 
 				// including content to the infowindow
-				infoWindow.setContent(iwContent);
+				infoWindow.setContent(contentString);
 
 				// opening the infowindow in the current map and at the current marker location
 				infoWindow.open(map, marker);
