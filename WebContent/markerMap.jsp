@@ -58,7 +58,7 @@ html, body {
 
 
 
-	<script src="<%=request.getContextPath()%>/js/main.js"
+	<script src="<%=request.getContextPath()%>/js/markerMap.js"
 		type="text/javascript" charset="utf-8"></script>
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv59_KYHHzRqtky9EwzOJ7WY-Pb5XMGlc"
