@@ -59,17 +59,8 @@ public class MarkerServlet extends HttpServlet {
 			
 			PrintWriter pw = response.getWriter();
 			pw.print(json.toString());
-			pw.close();
-			
+			pw.close();	
 		}
-		
-		
-		
-
-		
-		
-		
-
 		return ;
 	}
 
