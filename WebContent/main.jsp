@@ -19,7 +19,9 @@
 </head>
 
 <body>
-	<div id="left_sideBar">
+<div id="all">
+
+	<div id="left_sideBar" class="left">
 		<ul>
 			<li><a href="">
 					<div id="sideBar_logo">
@@ -55,13 +57,17 @@
 	</div>
 	<!-- side bar end -->
 	
-	<div id="markerMap">
+	<div class="main">
 	
-		<%@include file="markerMap.jsp" %>
+		<div id="markerMap">
+			<jsp:include page="markerMap.jsp" flush="false"/>
+		</div>
 	
 	</div>
+	
+	
 
-
+</div>
 </body>
 
 </html>

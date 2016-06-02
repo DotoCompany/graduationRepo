@@ -7,8 +7,6 @@
 <meta charset=UTF-8">
 
 <!-- customized sources -->
-<script src="<%=request.getContextPath()%>/js/main.js"
-	type="text/javascript" charset="utf-8"></script>
 
 <!-- imported sources -->
 <!-- jstl -->
@@ -18,7 +16,7 @@
 
 
 <style>
-html, body {
+/* html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -27,7 +25,7 @@ html, body {
 #map {
 	height: 100%;
 }
-
+ */
 .normal_bt {
 	font-family: nanum-barun-gothic-regular !important;
 	background-color: #969696;
