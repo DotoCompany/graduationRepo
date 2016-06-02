@@ -33,41 +33,38 @@ public class MarkerServlet extends HttpServlet {
 		
 		String service =request.getParameter("service");
 		String uId = request.getParameter("uId");
-		System.out.println("uId : "+uId);
-		try {
-			if(service.equals("insert")) {
-				String markers = request.getParameter("markers");
-				
-				JSONParser jsonParser = new JSONParser();
-				JSONObject jsonObject= null;
-				JSONArray markersArray = null;
-				try {
-					jsonObject = (JSONObject)jsonParser.parse(markers);
-					 markersArray = (JSONArray) jsonObject.get("markers"); 
-				} catch(Exception e) {
-					e.printStackTrace();
-				}
-				for(int i=0;i<markersArray.size();i++) {
-					jsonObject = (JSONObject)markersArray.get(i);
-					System.out.println(jsonObject);
-				}
-			}
-			else{
-				// DB에서 유저별로 Marker를 가져와
-				// json으로 변환
-				JSONObject json = MarkerJson.getInstance().createJson(MarkerManager.getInstance().getMarkerByUser(uId), uId);
-	
-				
-				PrintWriter pw = response.getWriter();
-				pw.print(json.toString());
-				pw.close();	
-			}
-			return ;
-		} catch(Exception ex) {
-			System.out.println("MarkerServlet_"+ex.getMessage());
-		} finally {
-			return ;
+		System.out.println("uId : "+uId);		
+		if(service!=null) {
+			insert(request);
+		}
+		else{
+			// DB에서 유저별로 Marker를 가져와
+			// json으로 변환
+			JSONObject json = MarkerJson.getInstance().createJson(MarkerManager.getInstance().getMarkerByUser(uId), uId);
+
 			
+			PrintWriter pw = response.getWriter();
+			pw.print(json.toString());
+			pw.close();	
+		}
+	
+	}
+	private void insert(HttpServletRequest request){
+		
+		String markers = request.getParameter("markers");
+		
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObject= null;
+		JSONArray markersArray = null;
+		try {
+			jsonObject = (JSONObject)jsonParser.parse(markers);
+			 markersArray = (JSONArray) jsonObject.get("markers"); 
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		for(int i=0;i<markersArray.size();i++) {
+			jsonObject = (JSONObject)markersArray.get(i);
+			System.out.println(jsonObject);
 		}
 	}
 
