@@ -42,7 +42,6 @@
 </style>
 
 
-<title>RE:CALL</title>
 </head>
 
 <body>
