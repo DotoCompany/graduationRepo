@@ -1,0 +1,121 @@
+@CHARSET "UTF-8";
+
+@font-face {
+    font-family: 'nanum-barun-gothic-regular';
+    src: url('../font/nanumbarungothicregular.eot');
+    src: url('../font/nanumbarungothicregular.eot?#iefix') format('embedded-opentype'),
+         url('../font/nanumbarungothicregular.woff2') format('woff2'),
+         url('../font/nanumbarungothicregular.woff') format('woff'),
+         url('../font/nanumbarungothicregular.ttf') format('truetype'),
+         url('../font/nanumbarungothicregular.svg#nanum-barun-gothic-regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: nanum-barun-gothic-regular !important;
+	margin: 0;
+	padding: 0;
+}
+
+#left_sideBar {
+	background-color: rgba(200,230,255,1.0);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 80px;
+	height: 100%;
+}
+
+#left_sideBar ul{
+	padding: 0;
+	margin: 0;
+}
+
+#left_sideBar ul li {
+	list-style-type: none;
+	height: 80px;
+}
+
+#left_sideBar ul li:hover {
+	background-color: rgba(140,200,255,1.0);
+}
+
+#left_sideBar ul li a {
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 13px;
+	color: #0991ff;
+}
+
+#sideBar_logo {
+	margin: auto;
+	width: 90%;
+	height: 100%;
+	background: url("../image/logo_black.png") no-repeat;
+	background-size: 2.5em;
+	background-position: 50% 30%;
+}
+
+#sideBar_profile {
+	margin: auto;
+	width: 90%;
+	height: 100%;
+	background: url("../image/profile.png") no-repeat;
+	background-size: 2.5em;
+	background-position: 50% 30%;
+}
+
+#sideBar_friends {
+	margin: auto;
+	width: 90%;
+	height: 100%;
+	background: url("../image/friends.png") no-repeat;
+	background-size: 2.5em;
+	background-position: 50% 30%;
+}
+
+#sideBar_photo {
+	margin: auto;
+	width: 90%;
+	height: 100%;
+	background: url("../image/photo.png") no-repeat;
+	background-size: 2.5em;
+	background-position: 50% 30%;
+}
+
+#sideBar_notification {
+	margin: auto;
+	width: 90%;
+	height: 100%;
+	background: url("../image/notification.png") no-repeat;
+	background-size: 2.5em;
+	background-position: 50% 30%;
+}
+
+#sideBar_markers {
+	margin: auto;
+	width: 90%;
+	height: 100%;
+	background: url("../image/marker.png") no-repeat;
+	background-size: 2.5em;
+	background-position: 50% 30%;
+}
+
+#left_sideBar span {
+	position: relative;
+	top: 70%;
+}
+
+#center {
+	position: absolute;
+	left: 80px;
+	margin: 0;
+	padding: 0;
+}
+
+#map {
+	height: 300px;
+	width: 500px;
+}
