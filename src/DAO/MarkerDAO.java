@@ -33,10 +33,10 @@ public class MarkerDAO {
 			conn = DBConnection.getInstance().getConn();
 			conn.setAutoCommit(false);
 			
-			String sql = " insert into marker (m_id,u_id_fk,address,lat,lng,m_time) values(?,?,?,?,?,?);";
+			String sql = " insert into marker (u_id_fk,address,lat,lng,m_time) values(?,?,?,?,?);";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,markerDto.getmId());pstmt.setString(2,markerDto.getuId());pstmt.setString(3,markerDto.getAddress());
-			pstmt.setString(4,markerDto.getLat());pstmt.setString(5,markerDto.getLng());pstmt.setString(6,markerDto.getM_time());
+			pstmt.setString(1,markerDto.getuId());pstmt.setString(2,markerDto.getAddress());
+			pstmt.setString(3,markerDto.getLat());pstmt.setString(4,markerDto.getLng());pstmt.setString(5,markerDto.getM_time());
 			
 			res = (byte)pstmt.executeUpdate();
 			
