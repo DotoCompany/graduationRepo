@@ -78,16 +78,12 @@ public class LoginServlet extends HttpServlet {
 		SessionManager manager=SessionManager.getInstance();
 		try {
 			HttpSession session = request.getSession();
-			System.out.println("--1--");
+			
 			session.setAttribute("userCode", userDTO.getuId());
-			System.out.println("--2--");
 			session.setAttribute("userEmail",userDTO.getEmailId());
-			System.out.println("--3--");
 			session.setAttribute("userName",userDTO.getName());
-			System.out.println(userDTO.getName());
-			System.out.println("--4--");
 			request.setAttribute("isLogin", "true");
-			System.out.println("--5--");
+			
 
 			HttpSession oldSession=manager.insert(userDTO.getuId(), session);
 	         if(oldSession!=null && oldSession!=session)
