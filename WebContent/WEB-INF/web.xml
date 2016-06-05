@@ -75,4 +75,24 @@
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/logout.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FriendListServlet</display-name>
+    <servlet-name>FriendListServlet</servlet-name>
+    <servlet-class>controller.FriendListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FriendListServlet</servlet-name>
+    <url-pattern>/friendList.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MessageServlet</display-name>
+    <servlet-name>MessageServlet</servlet-name>
+    <servlet-class>controller.MessageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MessageServlet</servlet-name>
+    <url-pattern>/message.do</url-pattern>
+  </servlet-mapping>
 </web-app>
