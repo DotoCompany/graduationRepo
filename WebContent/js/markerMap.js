@@ -29,7 +29,11 @@ window.onload = function() {
 		var options = {
 			zoom : 5,
 			center : new google.maps.LatLng(39.909736, -98.522109), // centered US
-			mapTypeId : google.maps.MapTypeId.TERRAIN,
+			zoomControlOptions: {
+				style: google.maps.ZoomControlStyle.BIG //zoom control size
+			},
+				scaleControl: true, // enable scale control
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			mapTypeControl : false
 		};
 
@@ -41,11 +45,13 @@ window.onload = function() {
 		$.each(markerList, function(key) {
 
 			var marker = markerList[key].marker;
-
+			
 			var m_id = marker.m_id;
 			var latlng = new google.maps.LatLng(marker.lat, marker.lng);
 			var addr = marker.address;
 			var m_time = marker.m_time;
+			
+			
 
 			createMarker(map, m_id, latlng, addr, m_time);
 			path.push(latlng);
@@ -77,10 +83,8 @@ window.onload = function() {
 		});
 		
 		var date = new Date(Date.parse(m_time)).toUTCString();
-		var btnHref = contextPath + '/test.jsp?m_id=' + m_id + '&latlng=' + latlng;
+		var btnHref = contextPath + '/markerEdit.jsp?m_id=' + m_id + '&lat=' + latlng.lat().toFixed(6) + '&lng=' + latlng.lng().toFixed(6);
 		
-		/*alert(btnHref);*/
-
 		infoWindow = new google.maps.InfoWindow();
 
 		(function(marker) {
@@ -93,7 +97,7 @@ window.onload = function() {
 			      '</div>'+
 			      '<h1 id="firstHeading" class="firstHeading">' +  date + '</h1>'+
 			      '<div id="bodyContent">'+
-			      '<p><b>' + latlng + '</b></p>' +
+			      '<p><b>(' + latlng.lat().toFixed(6) + ', ' + latlng.lng().toFixed(6) + ')</b></p>' +
 			      '<input type=button class="normal_bt" value="편집" onclick="window.location.href=\'' +
 			      
 			      btnHref + '\'"/>' +

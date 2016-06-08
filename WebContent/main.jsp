@@ -29,7 +29,7 @@
 			<jsp:include page="markerMap.jsp" flush="false"/>
 		</div>
 		
-		<div >
+		<div>
 		
 		</div>
 	

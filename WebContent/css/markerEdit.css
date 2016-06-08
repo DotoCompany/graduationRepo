@@ -1,0 +1,48 @@
+@CHARSET "UTF-8";
+
+#all {
+	margin: 0 auto;
+}
+
+hr {
+	height: 1px; 
+	background-color:#cccccc;
+}
+
+#centerDiv {
+	position: absolute;
+    left:80px; top:50px; right:0; bottom:0;
+}
+
+#image {
+	max-width: 500px;
+	max-height: 375px;
+} 
+
+.centered{
+    margin: 0 auto;
+}
+
+
+#locationInfo {
+	text-align: center;
+}
+
+#file {
+	display: none;
+}
+#texarea{
+	width:50%;
+	height:300px;
+	margin-left:25%;
+	margin-right:25%;
+	margin-top:2%;
+}
+
+#btn {
+	margin-bottom: 50px;
+}
+/* .btn {
+ text-align:center;
+ position: relative;
+} */
