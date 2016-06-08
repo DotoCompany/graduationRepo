@@ -45,21 +45,34 @@ html, body {
 </head>
 
 <body>
-
+<div id="all">
+	
+	<div id="sideBarDiv">
+		<jsp:include page="sideBar.jsp" flush="false"/>
+	</div>
+	
+	
 	<input type="hidden" id="contextPath"
 		value="<%=request.getContextPath()%>">
 	<input type="hidden" id="uId"
 		value="<%=session.getAttribute("userCode")%>">
 
-	<div id="map"></div>
+	<div id="map">
+	
+	</div>
 
 
 
+
+<!-- Custom sources -->
 	<script src="<%=request.getContextPath()%>/js/markerMap.js"
 		type="text/javascript" charset="utf-8"></script>
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv59_KYHHzRqtky9EwzOJ7WY-Pb5XMGlc"
 		type="text/javascript"></script>
+		
+		
+</div> <!-- End of "all" -->
 </body>
 
 </html>

@@ -7,9 +7,9 @@
 
 <div id="left_sideBar" class="left">
 		<ul>
-			<li><a href="">
+			<li><a href="<%=request.getContextPath()%>/main.jsp">
 					<div id="sideBar_logo">
-						<span></span>
+						<span>RE:Call</span>
 					</div>
 			</a></li>
 			<li><a href="">
