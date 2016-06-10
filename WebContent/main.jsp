@@ -4,6 +4,17 @@
 <html>
 
 <head>
+
+<%-- Session 체크 --%>
+<%
+	String code = "";
+	code = (String)request.getSession().getAttribute("userCode");
+	if(code==null || code.equals(""))
+		response.sendRedirect("login.jsp");
+%>
+
+
+
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/main.css">
 
@@ -12,8 +23,6 @@
 
 <!-- jQuery -->
 <script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
-
-
 
 <title>RE:CALL</title>
 </head>
