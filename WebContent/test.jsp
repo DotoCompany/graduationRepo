@@ -7,14 +7,14 @@
 
 <style>
 
-import url('http://fonts.googleapis.com/css?family=Oswald');
+/* import url('http://fonts.googleapis.com/css?family=Oswald');
 
 body {
   margin: 0;
   padding: 0;
   background-attachment: fixed;
   background-size: cover;
-}
+} */
 
 /* @media all and ( min-width: 560px ) {
     .div_style { 
@@ -22,7 +22,7 @@ body {
     }
 } */
 
-#video-background {
+/* #video-background {
   position: fixed;
   right: 0; 
   bottom: 0;
@@ -39,7 +39,7 @@ article {
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 10px;
+  margin: 0;
 }
 
 h1 {
@@ -51,7 +51,7 @@ h1 {
   color: #fff;
   font-family: Oswald, sans-serif;
   text-align: center;
-}
+} */
 
 </style>
 
@@ -59,23 +59,25 @@ h1 {
 </head>
 <body>
 
+ <video width="320" height="240" controls>
+ 	 <source src="<%=request.getContextPath()%>/video/feet_background.mp4" type="video/mp4">
+  </video>
+
 <div id="all">
 
 
-<div class="container-fluid">
-
-<h1>Video Background Snippet</h1>
+<!-- <h1>Video Background Snippet</h1> -->
 
 
-<div class="row">
-    <div class="col-xs-12 col-md-12 col-lg-12">
-  <div class="embed-responsive embed-responsive-16by9 div_style">
-    <iframe class="embed-responsive-item" src="<%=request.getContextPath()%>/video/feet.mp4" style="width:100%; height:100%;"></iframe>
-  </div>
+  <%-- <div class="embed-responsive embed-responsive-16by9 div_style">
+    <iframe class="embed-responsive-item" src="<%=request.getContextPath()%>/video/feet_background.mp4" style="height:800px; width:100%;" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+
   
-  </div>
-  </div>
+  </div> --%>
+  
+ 
 </div>
+
 
 <%-- <div class="container">
 	
@@ -103,7 +105,6 @@ h1 {
   <h1>Video Background Snippet</h1>
 </article> -->
 
-</div>
-<!-- poster="<%=request.getContextPath()%>/image/background.jpg" -->
+
 </body>
 </html>
