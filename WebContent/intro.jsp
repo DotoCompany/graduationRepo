@@ -7,123 +7,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- Imported sources -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	
+    <script src="<%=request.getContextPath()%>/common/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <%-- <link href="<%=request.getContextPath()%>/common/css/bootstrap.min.css" rel="stylesheet"> --%>
+
+	<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  	<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  	
+
+<!-- Customized sources -->
+	<link href="<%=request.getContextPath()%>/css/intro.css" rel="stylesheet">
+
 <%
 	if(request.getSession().getAttribute("userCode")!=null)
 		response.sendRedirect("main.jsp");
 %>
 
 
-<style>
-body {
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	font-family: "Oxygen", sans-serif;
-}
-
-#videoDiv {
-	
-}
-
-#bg-video {
-	position: relative;
-	z-index: -1;
-	right: 0;
-	bottom: 0;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	transform: translateY(-38vh);
-}
-
-.videoContent {
-	position: relative;
-	top: 30%;
-	z-index: 2;
-	margin: 0 auto;
-	max-width: 720px;
-	text-align: center;
-}
-
-.videoContent_heading {
-	margin-bottom: 24px;
-	color: rgb(39, 39, 39);
-	font-size: 44px;
-}
-
-.videoContent_teaser {
-	margin-bottom: 24px;
-	width: 100%;
-	font-size: 36px;
-	letter-spacing: 3px;
-	color: #fff;
-	font-family: Oswald, sans-serif;
-	text-align: center;
-}
-
-.content__cta {
-	display: inline-block;
-	margin: 0;
-	padding: 12px 48px;
-	color: rgb(255, 60, 100);
-	font-size: 22px;
-	text-decoration: none;
-	border: solid 4px rgb(255, 60, 100);
-}
-
-#contactDiv{
-	width: 100%;
-	background-color: #ccc;
-	
-	padding: 20px 50px;
-}
-
-#mapDiv{
-	width: 100%;
-	height: 450px;
-}
-
-
-footer {
-	margin: 20px 0;
-	background-color: white;
-	color: #57524C;
-}
-
-#footer {
-	text-align: center;
-}
-
-#footer a{
-	color: #57524C;
-	font-weight: bold;
-}
-
-#footer span{
-	margin: 0 10px;
-	font-size: 120%;
-}
-
-</style>
-
 <title>RE:Call</title>
 </head>
 
-<!-- Imported sources -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-	
-    <script src="<%=request.getContextPath()%>/common/js/bootstrap.min.js"></script>
-    <link href="<%=request.getContextPath()%>/common/css/bootstrap.min.css" rel="stylesheet">
+
 
 <body>
 
 
 	<div id="all">
 
-		<div class="container-fluid" style="padding: 0;">
+		<div >
 
-			<div id="videoDiv"
-				style="width: 100%; height: 550px; overflow: hidden;">
+			<div id="videoDiv" class="container-fluid">
 
 				<div class="videoContent">
 					<img class="videoContent_heading"
@@ -141,21 +57,36 @@ footer {
 				</video>
 			</div><!-- End of videoDiv -->
 
-			<div>
-				<h1>a</h1>
-				<h1>a</h1>
-				<h1>a</h1>
-				<h1>a</h1>
-				<h1>a</h1>
-				<h1>a</h1>
-				<h1>a</h1>
-				<h1>a</h1>
-				<h1>a</h1>
-				<h1>a</h1>
-				<h1>a</h1>
+			<div id="homeDiv" class="container-fluid" >
+				
+				<div class="row">
+					<div class="col-sm-5">
+						<h1 class="homeDiv_h1" style="margin-bottom: -10px;">Look back</h1>
+						<h1 class="homeDiv_h1">upon your life</h1>
+						
+						<h4 class="homeDiv_h4">Arrange your beautiful day with Recall, the Lifelog! </h4>
+						<a id="home-btn" class="red-btn" href="<%=request.getContextPath()%>/login.jsp">H O M E</a>
+					</div>
+					<div class="col-sm-7">
+					</div>
+				</div>
 			</div>
 
-			<div id="secondDiv"></div>
+
+			<div id="appDiv" class="container-fluid" >
+				<h1 class="addDiv-h1">Recall App for Android & iPhone</h1>
+				<br><br><br><br>
+				
+				<img 
+						src="<%=request.getContextPath()%>/image/android_w.png"
+						alt="Android App" width="250" style="float:left; margin-left:240px;">
+						
+				<img 
+						src="<%=request.getContextPath()%>/image/iphone_w.png"
+						alt="iPhone App" width="250" style="float:right; margin-right:240px;">
+				
+				<!-- <a class="red-btn" href="#">J O I N</a> -->
+			</div>
 
 			<div id="contactDiv">
 				<h2 class="text-center">CONTACT</h2>
@@ -163,16 +94,18 @@ footer {
 				<div class="row">
 					<div class="col-sm-5">
 						<p>Contact us and we'll get back to you within 24 hours.</p>
+						<br>
 						<p>
-							<span class="glyphicon glyphicon-map-marker"></span> Chicago, US
+							<span class="glyphicon glyphicon-map-marker"></span> Dankook Univ, Republic Of Korea
 						</p>
 						<p>
-							<span class="glyphicon glyphicon-phone"></span> +00 1515151515
+							<span class="glyphicon glyphicon-phone"></span> +82 10-9998-2666
 						</p>
 						<p>
 							<span class="glyphicon glyphicon-envelope"></span>
-							myemail@something.com
+							 doto_recall@gmail.com
 						</p>
+						
 					</div>
 					<div class="col-sm-7 slideanim">
 						<div class="row">
@@ -199,17 +132,15 @@ footer {
 
 			<div id="mapDiv"></div>
 
-
-
-
 		</div><!-- End of container-fluid -->
 
 
 		<footer class="container-fluid">
 			<div id="footer">
 				<a href="<%=request.getContextPath()%>/login.jsp">Home</a> <span>
+					| </span> <a href="#">Blog</a> <span>
 					| </span> <a href="<%=request.getContextPath()%>/policy.jsp">Policy</a> <span>
-					| </span> <a href="<%=request.getContextPath()%>/login.jsp">Home</a>
+					| </span> <a href="#">FAQ</a>
 			</div>
 		</footer><!-- End of footer -->
 

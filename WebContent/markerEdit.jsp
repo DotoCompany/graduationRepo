@@ -61,7 +61,7 @@
 						<div class="col-sm-9 col-lg-9 col-md-9 col-sm-offset-3 col-lg-offset-3 col-md-offset-3" >
 							
 							<div class="panel panel-default">
-					    		<div class="panel-heading">Your marker located : ( Lat : <c:out value="${ param.lat }" /> / Lng : <c:out value="${ param.lng }" /> )</div>
+					    		<div class="panel-heading">Your marker located : <br>( Lat : <c:out value="${ param.lat }" /> / Lng : <c:out value="${ param.lng }" /> )</div>
 					    		<div class="panel-body" id = "mapScope">
 				  	        		<div id="map" style="height:230px;"></div> 
 				  	        	</div>

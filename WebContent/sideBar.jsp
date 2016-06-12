@@ -17,14 +17,15 @@
 						<span>Profile</span>
 					</div>
 			</a></li>
-			<li><a href="">
-					<div id="sideBar_friends">
-						<span>Friends</span>
+			
+			<li><a href="<%=request.getContextPath()%>/photo.jsp">
+					<div id="sideBar_photo">
+						<span>Photo</span>
 					</div>
 			</a></li>
 			<li><a href="">
-					<div id="sideBar_photo">
-						<span>Photo</span>
+					<div id="sideBar_markers">
+						<span>Markers</span>
 					</div>
 			</a></li>
 			<li><a href="">
@@ -32,9 +33,10 @@
 						<span>Notification</span>
 					</div>
 			</a></li>
+			
 			<li><a href="">
-					<div id="sideBar_markers">
-						<span>Markers</span>
+					<div id="sideBar_friends">
+						<span>Friends</span>
 					</div>
 			</a></li>
 		</ul>

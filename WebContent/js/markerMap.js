@@ -23,8 +23,43 @@ window.onload = function() {
 		displayMarkers(markerList);
 
 	}
+	
+function displayMarkers(markerList) {
+		
+		var myOptions = {
+			    zoom: 5,
+			    center: new google.maps.LatLng(0, 0),
+			    mapTypeId: google.maps.MapTypeId.ROADMAP
+			  }
+		var map = new google.maps.Map(
+			    document.getElementById("map"),
+			    myOptions);
+		
+		var bounds = new google.maps.LatLngBounds();
+		var path = new Array();
+		$.each(markerList, function(key) {
 
-	function displayMarkers(markerList) {
+			var marker = markerList[key].marker;
+
+			var m_id = marker.m_id;
+			var latlng = new google.maps.LatLng(marker.lat, marker.lng);
+			var addr = marker.address;
+			var m_time = marker.m_time;
+
+			createMarker(map, m_id, latlng, addr, m_time);
+			path.push(latlng);
+			
+			bounds.extend(latlng);
+
+		});
+		
+		createPath(map, path);
+		map.setCenter(bounds.getCenter());
+		map.fitBounds(bounds);
+	}
+	
+
+	/*function displayMarkers(markerList) {
 		// map options
 		var options = {
 			zoom : 5,
@@ -61,7 +96,7 @@ window.onload = function() {
 		createPath(map, path);
 		
 	}
-	
+	*/
 	function createPath(map, path) {
 		
 		var flightPath = new google.maps.Polyline({
