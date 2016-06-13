@@ -9,19 +9,23 @@
 
 <style>
 #friendImage{
-	width:80px;
-	height:80px;
+	width:120px;
+	height:100px;
+}
+#friendName{
+font-size: 20px;
+
+}
+#from_friend_table {
+	float:left;
 }
 </style>
 <script>
-
 window.onload= function(){
-	
-
 	
 };
 </script>
-	<table>
+	<table id="from_friend_table">
 <c:forEach var="friends" items="${requestScope.friends }">
 	<tr>
 		<td rowspan="4" colspan="3">
@@ -35,8 +39,8 @@ window.onload= function(){
 		</tr>
 		<tr>
 			<td>
-				<input type="button" value="메시지 " id="messageBtn" onclick="javascript:messageBtn('${friends.friendCode }')"/>
-				<input type="button" value="친구삭제" id="friendDeleteBtn"/>
+				<input type="button" value="메시지 " id="messageBtn" class="btn btn-success btn-lg" onclick="javascript:messageBtn('${friends.friendCode }')"/>
+				<input type="button" value="친구삭제" class="btn btn-cancel btn-lg" id="friendDeleteBtn"/>
 			</td>
 		</tr>
 	</tr>

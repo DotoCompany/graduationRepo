@@ -8,7 +8,8 @@
 <script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
 <title>친구 목록</title>
 </head>
-
+<script src="<%=request.getContextPath()%>/common/js/bootstrap.min.js"></script>
+<link href="<%=request.getContextPath()%>/common/css/bootstrap.min.css" rel="stylesheet">
 
 <script>
 /*메세지 버튼 클릭 시.*/
@@ -42,7 +43,26 @@ window.onload = function() {
 </script>
 <style>
 body {
-margin-left:80px;
+	margin-left:80px;
+}
+#friendDiv
+{
+	width:350px;
+}
+#messageDiv{
+	position : absolute;
+	width:800px;
+	margin-bottom : 200px;
+	display:inline;
+}
+#messageArea {
+	width:100%;
+	height:100%;
+}
+#messageBox {
+	width:90.3%;
+	height:50px;
+	
 }
 </style>
 <jsp:include page="sideBar.jsp" flush="false"/>
@@ -51,6 +71,9 @@ margin-left:80px;
 	<div id="friendDiv">
 	</div>
 	<div id="messageDiv">
+		<textarea class="form-control" rows="40"  id="messageArea"></textarea>
+		<input type="text" name="message" placeholder="내용을 입력하세요..." id="messageBox"/>
+		<input type="button" id="meesageSendBtn"  class="btn btn-success btn-lg" value="전송"/>
 	</div>
 </body>
 </html>
