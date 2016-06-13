@@ -33,6 +33,7 @@ public class MessageServlet extends HttpServlet {
 		for(int i=0;i<arrayList.size();i++) {
 			System.out.println(arrayList.get(i).getBody());
 		}
+		request.getRequestDispatcher("form_message.jsp").forward(request, response);
 		
 		
 	}
