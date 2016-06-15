@@ -1,9 +1,11 @@
 package manager;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import DAO.MarkerDAO;
+import DTO.Marker;
 import DTO.MarkerDTO;
 
 public class MarkerManager {
@@ -22,7 +24,9 @@ public class MarkerManager {
 	public int insertMarker(MarkerDTO markerDto) {
 		return markerDao.insertMarker(markerDto);
 	}
-	
+	public int insertMarker(String uId,ArrayList<Marker> arrayList ) {
+		return markerDao.insertMarker(uId,arrayList);
+	}
 	public int deleteMarkerByUser(String uId) {
 		return markerDao.deleteMarkerByUser(uId);
 	}

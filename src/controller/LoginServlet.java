@@ -1,5 +1,5 @@
 package controller;
-//±è¼ÒÁø¹Ùº¸
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -35,6 +35,7 @@ public class LoginServlet extends HttpServlet {
 		String loginId = request.getParameter("loginId");
 		String loginPwd = request.getParameter("loginPwd");
 		
+		
 		String userAgent = request.getHeader("User-Agent").split("/")[0];
 		
 		
@@ -54,7 +55,7 @@ public class LoginServlet extends HttpServlet {
 			try {
 				loginJson.put("resultCode", "1");
 				loginJson.put("timestamp", System.currentTimeMillis());
-				loginJson.put("uID", userDTO.getuId());
+				loginJson.put("uId", userDTO.getuId());
 				loginJson.put("name", userDTO.getName());
 				loginJson.put("emailId", userDTO.getEmailId());
 				

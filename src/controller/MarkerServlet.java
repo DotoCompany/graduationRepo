@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,8 +13,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import util.json.MarkerJson;
+import DTO.Marker;
 import manager.MarkerManager;
+import util.json.MarkerJson;
 /**
  * Servlet implementation class MarkerServlet
  */
@@ -33,9 +35,11 @@ public class MarkerServlet extends HttpServlet {
 		
 		String service =request.getParameter("service");
 		String uId = request.getParameter("uId");
-		System.out.println("uId : "+uId);		
+		System.out.println("uId : "+uId);	
+		
 		if(service!=null) {
-			insert(request);
+			System.out.println("MarkerServlet - service start");
+			insert(request,uId);
 		}
 		else{
 			// DB에서 유저별로 Marker를 가져와
@@ -50,23 +54,26 @@ public class MarkerServlet extends HttpServlet {
 		}
 	
 	}
-	private void insert(HttpServletRequest request){
-		
+	private void insert(HttpServletRequest request,String uId){
+		//merkers String값 받아옴.
 		String markers = request.getParameter("markers");
 		
+		//
 		JSONParser jsonParser = new JSONParser();
 		JSONObject jsonObject= null;
 		JSONArray markersArray = null;
+		ArrayList<Marker> arrayList = new ArrayList<Marker>();
 		try {
 			jsonObject = (JSONObject)jsonParser.parse(markers);
-			 markersArray = (JSONArray) jsonObject.get("markers"); 
+			markersArray = (JSONArray) jsonObject.get("markers"); 
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		for(int i=0;i<markersArray.size();i++) {
 			jsonObject = (JSONObject)markersArray.get(i);
-			System.out.println(jsonObject);
+			arrayList.add(new Marker((String)jsonObject.get("lat"),(String)jsonObject.get("lng") , (String)jsonObject.get("m_time") ,(String)jsonObject.get("event") ));
 		}
+		MarkerManager.getInstance().insertMarker(uId,arrayList);
 	}
 
 }
