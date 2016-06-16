@@ -47,4 +47,28 @@ public class MessageDAO {
 		}
 		return arrayList;
 	}
+	public int sendMsg(String uId,String friendCode,String msg) {
+		int result= 0;
+		PreparedStatement pstmt = null;
+		Connection conn = null;
+		try {
+			conn = DBConnection.getInstance().getConn();
+			String sql = "insert into message (body,from_id_fk,to_id_fk,sent_time) values(?,?,?,now());";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, msg);
+			pstmt.setString(2, uId);
+			pstmt.setString(3, friendCode);
+			result = pstmt.executeUpdate();
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		return result;
+	}
 }

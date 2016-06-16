@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <%@page import="java.util.ArrayList,DTO.FriendDTO" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -35,9 +33,6 @@ window.onload= function(){
 			<c:if test="${friends.image !=null }">
 				<img src="${friends.image }" id="friendImage" />
 			</c:if>
-			
-			
-			
 		</td>
 		<tr>
 			<td id="friendName">${friends.friendName }</td>
@@ -47,9 +42,10 @@ window.onload= function(){
 		</tr>
 		<tr>
 			<td>
-				<input type="button" value="메시지 " id="messageBtn" class="btn btn-success btn-lg" onclick="javascript:messageBtn('${friends.friendCode }')"/>
+				<input type="button" value="메시지 " id="messageBtn" class="btn btn-success btn-lg" onclick="javascript:messageBtn('${friends.friendCode }','${friends.image }')"/>
 				<input type="button" value="친구삭제" class="btn btn-cancel btn-lg" id="friendDeleteBtn"/>
 			</td>
 		</tr>
 	</tr>
 </c:forEach>
+	</table>

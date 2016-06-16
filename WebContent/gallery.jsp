@@ -41,6 +41,17 @@ img {
 <title>RE:Call - Photo</title>
 
 </head>
+<script type="text/javascript">
+window.onload=function(){
+	$.ajax({
+		url:"lifelogget.do",
+		success: function(data){
+			alert(data);
+			$("#photoArea").html(data);
+		}
+	});
+}
+</script>
 <body>
 <jsp:include page="sideBar.jsp" flush="false"/>
 <h1 id="titlebar">RECALL-Photo</h1>

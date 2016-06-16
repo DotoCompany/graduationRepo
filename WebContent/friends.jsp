@@ -14,17 +14,23 @@
 
 <script>
 /*메세지 버튼 클릭 시.*/
-function messageBtn(friendCode){
+function messageBtn(friendCode,friendImage){
 	$.ajax({
 		type : "post",
 		url : "message.do",
-		data : { "friendCode" : friendCode }
+		/*아래에 friendImage를 보고 왜 이걸 여기서 보내줬지 하고 있을거다..
+		지금은 새벽 3시고 내일은 발표고 졸려서 그랬다.
+		미안하다
+		*/
+		data : { "friendCode" : friendCode, 
+		"friendImage" :friendImage	
+		}
 		,
 		error : function() {
 			alert("메시지 불러오기 실패");
 		},
 		success : function(data) {
-			$("#messageDiv").html(data);
+			$("#messageArea").html(data);
 		}
 	});
 }
@@ -40,7 +46,21 @@ window.onload = function() {
 				$("#friendDiv").html(data);
 			}
 		});	
+		$("#messageSendBtn").click(function(){
+			
+			 $.ajax({
+				type:'post',
+				url: "messageSend.do",
+				data :{ msg : $("#messageBox").val() ,friendCode : $("#friendCode").val()  } ,
+				success : function(data) {
+					if(data!=0){
+						$("#messageBtn").trigger("click");
+					}
+				}
+			}); 
+		});
 }
+
 </script>
 
 <jsp:include page="sideBar.jsp" flush="false"/>
@@ -49,7 +69,7 @@ window.onload = function() {
 	<div id="friendDiv">
 	</div>
 	<div id="messageDiv">
-		<textarea rows="40" readonly id="messageArea"></textarea>
+		<div id="messageArea"></div>
 		<div id="message_bottom">
 			<input type="text" name="message" placeholder="내용을 입력하세요..." id="messageBox"/>
 			<input type="button" id="messageSendBtn" class="btn btn-success btn-lg" value="전송"/>
