@@ -90,4 +90,14 @@
     <servlet-name>MessageServlet</servlet-name>
     <url-pattern>/message.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserMgmtServlet</display-name>
+    <servlet-name>UserMgmtServlet</servlet-name>
+    <servlet-class>admin.controller.UserMgmtServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserMgmtServlet</servlet-name>
+    <url-pattern>/userMgmt.do</url-pattern>
+  </servlet-mapping>
 </web-app>

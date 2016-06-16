@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.DBConnection;
 import util.crypt.BCrypt;
@@ -23,6 +25,8 @@ public class UserDAO {
 	private UserDAO(){
 		
 	}
+	
+	
 	
 	/**
 	 * User정보 input method.
@@ -185,6 +189,45 @@ public class UserDAO {
 			}
 		}
 		return userDTO;
+	}
+	
+	/**
+	 * 전체 유저를 불러오는 메소드. Admin 페이지에서 사용
+	 * @return List<UserDTO>
+	 */
+	public List<UserDTO> getAllUsers() {
+		
+		PreparedStatement pstmt = null;
+		Connection conn = null;
+		ResultSet rs = null;
+		List<UserDTO> userList = null;
+		
+		try {
+			userList = new ArrayList<UserDTO>();
+			conn = DBConnection.getInstance().getConn();
+			
+            String sql = "select * from user_tb";
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+                
+            while(rs.next()){
+            	
+            	userList.add(new UserDTO(rs.getString("u_id"), rs.getString("email_id"),rs.getString("name"),"",rs.getString("reg_date")));
+            	
+			}
+		} catch (SQLException e ) {
+	        e.printStackTrace();
+	    } catch (Exception e) {
+	    	e.printStackTrace();
+	    } finally {
+	    	if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+            if (conn != null) {
+            	try { 
+                	conn.close(); 
+            	} catch(SQLException ex) {}
+            } 
+	    }
+		return userList;
 	}
 	
 	/**
