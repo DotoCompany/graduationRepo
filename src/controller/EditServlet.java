@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import DAO.LifeLogDAO;
 import DTO.LifeLogBodyDTO;
 import DTO.LifeLogDTO;
 import DTO.LifeLogPhotoDTO;
@@ -69,14 +71,31 @@ public class EditServlet extends HttpServlet {
 				
 				completeImage = File.separator+"graduationRepo"+File.separator+"userImage"+File.separator+fileName;
 				
+				String userCode = (String)request.getSession().getAttribute("userCode");
+				//String mId = request.getParameter("mId");
 				
-				System.out.println(
-						
-						request.getSession().getAttribute("userCode") + " " +
-						request.getParameter("mId") + " " +
-						request.getParameter("body") + " "
-						
-						);
+				if(userCode!=null) {
+					
+					ll = new LifeLogDTO("", userCode,request.getParameter("mId")
+							,"","YES");
+					
+					llb = new LifeLogBodyDTO("","",request.getParameter("body"),"1");
+					
+					llp = new LifeLogPhotoDTO("","",completeImage);
+					
+					System.out.println("Life Log : " + LifeLogDAO.getInstance().insertLifeLog(ll, llb, llp));
+					
+					RequestDispatcher rd=request.getRequestDispatcher("gallery.jsp");
+					rd.forward(request, response);
+				
+				} else {
+				
+					request.setAttribute("isLogin", "false");
+					RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
+					rd.forward(request, response);
+					
+				}
+			
 				
 				
 			}

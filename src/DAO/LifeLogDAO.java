@@ -26,7 +26,7 @@ public class LifeLogDAO {
 	
 	public int insertLifeLog(LifeLogDTO ll, LifeLogBodyDTO llb, LifeLogPhotoDTO llp) {
 		
-		final String llSql = "insert into life_log (u_id_fk,m_id_fk,upload_date,isPublick) values(?,?,?,?);";
+		final String llSql = "insert into life_log (u_id_fk,m_id_fk,upload_date,isPublic) values(?,?,?,?);";
 		final String llSelectSql = "select ll_id from life_log where u_id_fk=? order by upload_date desc limit 1";
 		final String llbSql = "insert into life_log_body (ll_id_fk, body, seq) values (?,?,?);";
 		final String llpSql = "insert into life_log_photo (ll_id_fk, url) values (?,?);";
@@ -45,7 +45,7 @@ public class LifeLogDAO {
 			/*아랫줄은 PreparedStatement객체에 값을 대입해주는 코드들이다.*/
 			pstmt.setString(1, ll.getuIdFk());pstmt.setString(2, ll.getmIdFk());
 			pstmt.setString(3, new Timestamp(new java.util.Date().getTime()).toString());pstmt.setString(4, ll.getIsPublic());
-			success = (byte)pstmt.executeUpdate();
+			success = pstmt.executeUpdate();
 			if(success > 0) {
 		
 				pstmt = conn.prepareStatement(llSelectSql);
@@ -59,11 +59,11 @@ public class LifeLogDAO {
 					pstmt = conn.prepareStatement(llbSql);
 					pstmt.setString(1, llId);pstmt.setString(2, llb.getBody());
 					pstmt.setString(3, llb.getSeq());
-					success = (byte)pstmt.executeUpdate();
+					success = pstmt.executeUpdate();
 					
 					pstmt = conn.prepareStatement(llpSql);
 					pstmt.setString(1, llId);pstmt.setString(2, llp.getUrl());
-					success = (byte)pstmt.executeUpdate();
+					success = pstmt.executeUpdate();
 					
 				}
 			}
