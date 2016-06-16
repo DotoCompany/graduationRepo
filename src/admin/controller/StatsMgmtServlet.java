@@ -10,15 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DTO.UserDTO;
-import admin.manager.UserMgmtManager;
+import admin.manager.StatsMgmtManager;
+import DTO.UserStatsDTO;
 
 /**
- * Servlet implementation class UserMgmtServlet
+ * Servlet implementation class StatsMgmtServlet
  */
-public class UserMgmtServlet extends HttpServlet {
+public class StatsMgmtServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -29,42 +28,25 @@ public class UserMgmtServlet extends HttpServlet {
 		try {
 			HttpSession session = request.getSession();
 			/*if(session.getAttribute("userAuth").equals("ADMIN")){*/
-				
-				UserMgmtManager userMgmt = null;
-				List<UserDTO> userList = null;
-				String service = "";
-				service = request.getParameter("service");
-				if(service==null || service.equals("")) {
-					
-					userMgmt = UserMgmtManager.getInstance();
-					userList = userMgmt.getAllUsers();
-					
-					//System.out.println("test : " + userList.get(10));
-					
-					request.setAttribute("userList", userList);
-					RequestDispatcher rd = request.getRequestDispatcher("admin/userMgmt.jsp");
-					rd.forward(request, response);
-					
-				} else {
-					
-					if(service.equals("ADD")) {
-						
-						
-					} else if(service.equals("DELETE")) {
-						
-						String deleteUser = request.getParameter("deleteId");
-						userMgmt = UserMgmtManager.getInstance();
-						userMgmt.deleteUserById(deleteUser);
-						response.sendRedirect("userMgmt.do");
-					}
-					
+			
+			
+			
+			List<UserStatsDTO> userStats = StatsMgmtManager.getInstance().getUserStats();
+			for(UserStatsDTO qua : userStats) {
+				request.setAttribute("qua"+qua.getQuarter(), qua.getUserCnt());
+			}
+			
+			for(int i=1; i<=4; i++) {
+				if(request.getAttribute("qua"+i)==null) {
+					request.setAttribute("qua"+i, "0");
 				}
-				
-				
-				
-				
-				
-			//}
+			}
+			
+			RequestDispatcher rd = request.getRequestDispatcher("admin/userQuarterStats.jsp");
+			rd.forward(request, response);
+			
+			/*}*/
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

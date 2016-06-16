@@ -21,4 +21,9 @@ public class UserMgmtManager {
 	public List<UserDTO> getAllUsers() {
 		return userDao.getAllUsers();
 	}
+	
+	public byte deleteUserById(String uId) {
+		System.out.println("uId: "+uId);
+		return userDao.deleteUserById(uId);
+	}
 }
