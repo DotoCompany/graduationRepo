@@ -123,4 +123,26 @@
     <url-pattern>/reqFriend.do</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+    <description></description>
+    <display-name>ModifyServlet</display-name>
+    <servlet-name>ModifyServlet</servlet-name>
+    <servlet-class>controller.ModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifyServlet</servlet-name>
+    <url-pattern>/modify.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LeaveServlet</display-name>
+    <servlet-name>LeaveServlet</servlet-name>
+    <servlet-class>controller.LeaveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LeaveServlet</servlet-name>
+    <url-pattern>/leave.do</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>

@@ -175,7 +175,7 @@ public class UserDAO {
 				
 				/*유저로부터 입력받은 pwd와 DB의 pwd를 비교 */
 				if(BCrypt.checkpw(shaPass,dbPwd)) {
-					userDTO = new UserDTO(rs.getString("u_id"), rs.getString("email_id"),rs.getString("name"),dbPwd,rs.getString("reg_date"));
+					userDTO = new UserDTO(rs.getString("u_id"),rs.getString("image") ,rs.getString("email_id"),rs.getString("name"),dbPwd,rs.getString("reg_date"));
 				}
 				
 			}
@@ -251,23 +251,21 @@ public class UserDAO {
 			
 			String orgPass = userDTO.getPwd();
             String shaPass = sha.getSha256(orgPass.getBytes());
+        	String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
+
             
-            String sql = "select * from user_tb where u_id=?;";
+            String sql = "select * from user_tb where email_id=?;";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, userDTO.getuId());
+            pstmt.setString(1, userDTO.getEmailId());
             rs = pstmt.executeQuery();
                 
             if(rs.next()){
             	conn.setAutoCommit(false);
-            	
-				String dbPwd= rs.getString("pwd"); 
-				if(BCrypt.checkpw(shaPass,dbPwd)){
-					
-					String updateSql = "update uset_tb set email_id=?, name=? where u_id=?;";
+					String updateSql = "update user_tb set name=?, pwd=? where email_id=?;";
                     pstmt = conn.prepareStatement(updateSql);
-                    pstmt.setString(1, userDTO.getEmailId());
-                    pstmt.setString(2, userDTO.getName());
-                    pstmt.setString(3, userDTO.getuId());
+                    pstmt.setString(1, userDTO.getName());
+                    pstmt.setString(2, bcPass);
+                    pstmt.setString(3, userDTO.getEmailId());
                     pstmt.executeUpdate();
                     
                     success = 1;
@@ -275,7 +273,6 @@ public class UserDAO {
 					success = 0;
 				
 				conn.commit();
-			}
 		} catch (SQLException e ) {
 	        e.printStackTrace();
 	        if (conn != null) {

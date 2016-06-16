@@ -12,7 +12,7 @@
 						<span>RE:Call</span>
 					</div>
 			</a></li>
-			<li><a href="">
+			<li><a href="<%=request.getContextPath()%>/profile.jsp">
 					<div id="sideBar_profile">
 						<span>Profile</span>
 					</div>

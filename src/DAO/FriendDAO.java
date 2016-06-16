@@ -38,9 +38,7 @@ public class FriendDAO {
 				String image = rs.getString("image");
 				if(image.equals("0"))
 					image ="image/default_profile_image.png";
-					
 				arrayList.add(new FriendDTO(rs.getString("f_id"),image,rs.getString("name"),rs.getString("email_id")));
-				System.out.println("--");
 				
 			}
 			
@@ -59,13 +57,52 @@ public class FriendDAO {
 	}
 	public int requestFriend(String uId,String toUserCode){
 		int result = 0;
-	//	Connectino conn = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
 		try {
-	//		String sql = "inert into fri"
+			conn = DBConnection.getInstance().getConn();
+			conn.setAutoCommit(false);
+			String sql = "insert into friends (f1_id_fk , f2_id_fk , status) values(?,?,0);";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, uId);
+			pstmt.setString(2, toUserCode);
+			result = pstmt.executeUpdate();
+			conn.commit();
+			
 		} catch(Exception ex) {
 			ex.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			}
+			catch(Exception ex) {
+				ex.printStackTrace();
+			}
 		}
-		return 0;
-		
+		return result;	
+	}
+	public int beFriend(String uId,String toUserCode) {
+		int result = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DBConnection.getInstance().getConn();
+			String sql ="update friends set status='1' where f1_id_fk=? and f2_id_fk=?;";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, uId);
+			pstmt.setString(2, toUserCode);
+			result = pstmt.executeUpdate();
+		}catch(Exception ex ){
+			ex.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		return result;
 	}
 }

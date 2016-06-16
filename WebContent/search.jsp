@@ -12,6 +12,7 @@
 function requestFriend(uId) {
 	$.ajax({
 		type:"post",
+		
 		data : {toUserCode : uId},
 		url: "reqFriend.do",
 		success : function(data) {

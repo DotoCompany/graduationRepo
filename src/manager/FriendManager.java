@@ -17,6 +17,6 @@ public class FriendManager {
 		return FriendDAO.getInstance().getFriends(userCode);
 	}
 	public int requestFriend(String uId, String toUserCode) {
-		return 0;
+		return FriendDAO.getInstance().requestFriend(uId, toUserCode);
 	}
 }
