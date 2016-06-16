@@ -119,8 +119,7 @@
     <servlet-name>FriendRequestServlet</servlet-name>
     <url-pattern>/reqFriend.do</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>ModifyServlet</display-name>
     <servlet-name>ModifyServlet</servlet-name>
@@ -140,8 +139,6 @@
     <servlet-name>LeaveServlet</servlet-name>
     <url-pattern>/leave.do</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description></description>
     <display-name>StatsMgmtServlet</display-name>
@@ -151,5 +148,25 @@
   <servlet-mapping>
     <servlet-name>StatsMgmtServlet</servlet-name>
     <url-pattern>/statsMgmt.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminLoginServlet</display-name>
+    <servlet-name>AdminLoginServlet</servlet-name>
+    <servlet-class>admin.controller.AdminLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminLoginServlet</servlet-name>
+    <url-pattern>/adminLogin.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminLogoutServlet</display-name>
+    <servlet-name>AdminLogoutServlet</servlet-name>
+    <servlet-class>admin.controller.AdminLogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminLogoutServlet</servlet-name>
+    <url-pattern>/adminLogout.do</url-pattern>
   </servlet-mapping>
 </web-app>

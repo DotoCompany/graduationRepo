@@ -11,7 +11,7 @@ import java.util.List;
 
 
 import DTO.UserDTO;
-import DTO.UserStatsDTO;
+import admin.dto.UserStatsDTO;
 import model.DBConnection;
 import util.crypt.BCrypt;
 import util.crypt.SHA256;

@@ -21,6 +21,13 @@
 	<!-- Custom Fonts -->
     <link href="<%=request.getContextPath()%>/admin/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+<style>
+
+ a.btn {
+ 	float: left;
+ }
+
+</style>
 
 <div id="wrapper">
 <!-- navbar 시작 -->
@@ -36,7 +43,7 @@
           	<span class="icon-bar"></span>
           	<span class="icon-bar"></span>                        
       	</button>
-      	<a class="navbar-brand" href="<%=request.getContextPath()%>/admin/adminMain.jsp">
+      	<a class="navbar-brand" href="<%=request.getContextPath()%>/userMgmt.do">
       		<img src="<%=request.getContextPath()%>/image/RE-CALL_gray.png" style="height: 20px;">
       	</a>
     </div>
@@ -64,7 +71,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
-                        	<a href="<%=request.getContextPath()%>/admin?logout=OK"><i class="fa fa-sign-out fa-fw"></i> 로그아웃</a>
+                        	<a href="<%=request.getContextPath()%>/adminLogout.do"><i class="fa fa-sign-out fa-fw"></i> 로그아웃</a>
                         </li>
                     </ul>
                     <!-- end of dropdown-user -->
@@ -92,7 +99,7 @@
                             <ul class="nav nav-second-level"> 
                             <!-- nav-second-level ? ul li 아래에 또 다른 ul il 가 달려 있을때,  -->
                                 <li>
-                                	<button type="button" class="btn btn-link marketTotBtn" <%-- href="<%=request.getContextPath()%>/adminMain?service=member" --%> style="color: #333333;">회원 전체보기</button>
+                                	<a class="btn btn-link" href="<%=request.getContextPath()%>/userMgmt.do" style="color:black;">회원 전체보기</a>
                                     <%-- <a href="<%=request.getContextPath()%>/adminMain?service=member" style="color: black;">회원 전체보기</a> --%>
                                 </li>
                             </ul>
@@ -122,17 +129,20 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 통계<!-- <span class="fa arrow"></span> --></a>
                             <ul class="nav nav-second-level">
                                 <li>
+                                	<a class="btn btn-link" href="<%=request.getContextPath()%>/statsMgmt.do" style="color:black;">마켓 전체 통계</a> 
                                     <%-- <a href="<%=request.getContextPath()%>/adminStats?service=marketTotStats" style="font-size: 1.2em;" disabled>마켓 전체 통계</a> --%>
-                                    <form action="<%=request.getContextPath()%>/adminStats" id="marketTotFm" method="post">
-                                    	<button type="button" class="btn btn-link marketTotBtn" href="<%=request.getContextPath()%>/adminStats" style="color: #333333;">회원 전체 통계</button>
-                                    </form> 
+                                    <%-- <form action="<%=request.getContextPath()%>/adminStats" id="marketTotFm" method="post">
+                                    	<button type="button" class="btn btn-link marketTotBtn" href="<%=request.getContextPath()%>/statsMgmt.do" style="color: #333333;">회원 전체 통계</button>
+                                    </form>  --%>
                                 </li>
                                 <li>
-                                	<button type="button" class="btn btn-link" disabled>블로그 전체 통계</button> 
+                                	<a class="btn btn-link" href="#" disabled>마켓 방문자별 통계</a> 
+                                	<!-- <button type="button" class="btn btn-link" disabled>블로그 전체 통계</button> --> 
                                     <%-- <a href="<%=request.getContextPath()%>/adminStats?service=marketVisitorTotStats">마켓 방문자별 통계</a> --%>
                                 </li>
                                 <li>
-                                	<button type="button" class="btn btn-link" disabled>게시글 전체 통계</button> 
+                                	<a class="btn btn-link" href="#" disabled>게시글 전체 통계</a>
+                                	<!-- <button type="button" class="btn btn-link" disabled>게시글 전체 통계</button>  -->
                                     <%-- <a href="<%=request.getContextPath()%>/adminStats?service=marketCategoryStats">마켓 종류별 통계</a> --%>
                                 </li>
                             </ul>

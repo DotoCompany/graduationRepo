@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import admin.manager.StatsMgmtManager;
-import DTO.UserStatsDTO;
+import admin.dto.UserStatsDTO;
 
 /**
  * Servlet implementation class StatsMgmtServlet
@@ -27,7 +27,7 @@ public class StatsMgmtServlet extends HttpServlet {
 		
 		try {
 			HttpSession session = request.getSession();
-			/*if(session.getAttribute("userAuth").equals("ADMIN")){*/
+			/*if(session.getAttribute("adminAuth").equals("ADMIN")){*/
 			
 			
 			

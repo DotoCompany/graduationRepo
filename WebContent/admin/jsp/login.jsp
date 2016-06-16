@@ -45,7 +45,7 @@
 						<h4>RECALL 관리자 모드</h4>
 					</div>
                     <div class="panel-body">
-                        <form action="<%=request.getContextPath()%>/admin" id="loginFm" method="post">
+                        <form action="<%=request.getContextPath()%>/adminLogin.do" id="loginFm" method="post">
                             <fieldset>
                                 <div class="form-group">
                                 	<input type="text" class="form-control" id="adminId" name="adminId" placeholder="Enter id" autofocus>

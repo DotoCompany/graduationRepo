@@ -1,4 +1,4 @@
-package DTO;
+package admin.dto;
 
 public class UserStatsDTO {
 	

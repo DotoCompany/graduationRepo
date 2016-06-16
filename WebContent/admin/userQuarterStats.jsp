@@ -5,6 +5,8 @@
 <html>
 <head>
 
+	<title>'RECALL 관리자모드'</title>
+
 <!-- imported sources -->
    	
    	<!-- jQuery -->
@@ -36,8 +38,19 @@
     	<input type ="hidden" value ="${requestScope.qua3}" id ="qua3"/>
     	<input type ="hidden" value ="${requestScope.qua4}" id ="qua4"/>
     
-    	<canvas id="canvas"> </canvas>
-    
+    	<div class="row">
+    		<div class="col-sm-12 col-md-12">
+    			<h3>- 분기별 사용자 가입 현황</h3>
+    			<br>
+    		</div>
+    	</div>
+    	
+    	<div class="row">
+    		<div class="col-sm-12 col-md-12">
+    			<canvas id="canvas"> </canvas>
+    		</div>
+    	</div>
+    	 
     
     
     <script>
