@@ -46,8 +46,8 @@ img {
 <h1 id="titlebar">RECALL-Photo</h1>
 <div id="photoDiv">
 	<div id="photoArea">
-		<%for(int i=0;i<10;i++){ %>
-			<img src="testimage/paris.jpg">
+		<%for(int i=0;i<2;i++){ %>
+			<img src="/userImage/8기_단체사진.jpg">
 		<%} %>
 	</div>
 </div>

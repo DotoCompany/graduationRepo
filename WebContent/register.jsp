@@ -14,6 +14,8 @@
 </head>
 
 <body>
+<div id="background">
+		<img src="<%=request.getContextPath()%>/image/background.jpg" class="stretch"/>
 	<form class="main_div" id="signUpForm" method="post" action="<%=request.getContextPath()%>/register.do">
 		<div id="logo_div">
 			<img id="logo" src="<%=request.getContextPath()%>/image/logo.png" />
@@ -52,6 +54,7 @@
 			</p>
 		</div>
 	</form>
+	</div>
 </body>
 
 </html>

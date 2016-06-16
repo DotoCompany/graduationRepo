@@ -1,0 +1,100 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: nanum-barun-gothic-regular !important;
+	margin-left:80px;
+}
+
+#all {
+	padding-top: 70px;
+}
+
+#friendDiv
+{
+	float: left;
+	width: 350px;
+	height: 556px;
+	padding: 5px;
+	margin-left: 50px;
+	background-color: #f8a5a7;
+}
+
+#messageDiv {
+	position: absolute;
+    width: 600px;
+    padding: 5px;
+    display: inline-block;
+    background-color: #8db4c5;
+}
+
+#messageArea {
+	width: 100%;
+    height: 500px;
+    resize: none;
+    outline: none;
+    background-color: #abd2ff;
+    border: none;
+    border-radius: 15px;
+}
+
+#message_bottom {
+	margin-top: 5px;
+}
+
+#messageBox {
+    vertical-align: middle;
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#messageSendBtn {
+    width: 9%;
+    font-size: 15px;
+    padding: 10px 1px 10px 1px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e8f316;
+    color: #404040;
+    font-weight: bold;
+}
+
+#messageSendBtn:hover {
+	background-color: #c9d20b;
+	color: black;
+}
+
+#from_friend_table {
+	background-color: #fac8ff;
+	width: 330px;
+}
+#friendImage {
+	padding: 10px;
+}
+
+#friendName {
+	padding-top: 3px;
+}
+
+#messageBtn {
+	background-color: #30f54e;
+	color: #ffffff;
+	border: none;
+    padding: 7px 10px 7px 10px;
+    margin: 1px 1px 2px -2px;
+}
+
+#friendDeleteBtn {
+	background-color: #30f54e;
+	color: #ffffff;
+	border: none;
+	padding: 7px 10px 7px 10px;
+	margin-right: 5px;
+}
+
+#messageBtn {
+	
+}
