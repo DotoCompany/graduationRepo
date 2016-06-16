@@ -16,12 +16,15 @@
 	session = request.getSession();
 %>
 
-<jsp:include page="sideBar.jsp" flush="false" />
+
 <script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
 <script src="<%=request.getContextPath()%>/js/profile.js"></script>
 
 
 <body>
+<div id="sideBarDiv">
+      <jsp:include page="sideBar.jsp" flush="false"/>
+   </div> <!-- End of sideBarDiv -->
 	<form id="profile_all_div" method="post" action="<%=request.getContextPath()%>/modify.do">
 		<div id="profile_">
 			<div id="profile_picture_div">

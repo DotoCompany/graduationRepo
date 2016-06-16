@@ -13,14 +13,14 @@
 }
 
 #left_sideBar {
-	/* background-color: #00CC99; */
-	background-color: rgba(0,204,153,1.0);
-	/* background-color: rgba(200,230,255,1.0); */
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	width: 80px;
-	height: 100%;
+   font-family: nanum-barun-gothic-regular !important;
+   background-color: rgba(0,204,153,1.0);
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   width: 80px;
+   height: 100%;
+   z-index: 10;
 }
 
 #left_sideBar ul{
