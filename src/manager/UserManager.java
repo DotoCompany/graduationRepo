@@ -1,5 +1,9 @@
 package manager;
 
+import java.util.ArrayList;
+
+import java.util.ArrayList;
+
 import DAO.UserDAO;
 import DTO.UserDTO;
 
@@ -15,7 +19,9 @@ public class UserManager {
 	public static UserManager getInstance() {
 		return instance;
 	}
-	
+	public ArrayList<UserDTO> searchUser(String searchBox) {
+		return userDao.searchUser(searchBox);
+	}
 	
 	/**
 	 * User¡§∫∏ input method.

@@ -17,7 +17,9 @@ public class FriendDAO {
 	private FriendDAO(){
 		
 	}
+	
 	public static FriendDAO getInstance() {return friendDAO;}
+	
 	public ArrayList<FriendDTO> getFriends(String userCode ){
 		PreparedStatement pstmt = null;
 		FriendDTO friendDTO = null;
@@ -54,5 +56,16 @@ public class FriendDAO {
 			}
 		} 
 		return arrayList;
+	}
+	public int requestFriend(String uId,String toUserCode){
+		int result = 0;
+	//	Connectino conn = null;
+		try {
+	//		String sql = "inert into fri"
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		return 0;
+		
 	}
 }

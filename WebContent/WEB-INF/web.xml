@@ -90,4 +90,24 @@
     <servlet-name>MessageServlet</servlet-name>
     <url-pattern>/message.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchServlet</display-name>
+    <servlet-name>SearchServlet</servlet-name>
+    <servlet-class>controller.SearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchServlet</servlet-name>
+    <url-pattern>/search.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FriendRequestServlet</display-name>
+    <servlet-name>FriendRequestServlet</servlet-name>
+    <servlet-class>controller.FriendRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FriendRequestServlet</servlet-name>
+    <url-pattern>/reqFriend.do</url-pattern>
+  </servlet-mapping>
 </web-app>
