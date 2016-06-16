@@ -20,6 +20,9 @@
     <script src="<%=request.getContextPath()%>/common/js/bootstrap.min.js"></script>
     <!-- masonry -->
 	<script src="<%=request.getContextPath()%>/admin/js/masonry.pkgd.min.js"></script>
+	
+	
+	
 </head>
 <body>
 
@@ -33,17 +36,16 @@
 	<table class="table table-hover">
 		<thead>
 			<tr>
-				<th></th>
-				<th>아이디</th>
-				<th>이름</th>
-				<th>가입날짜</th>
-				<th></th>
-				
+				<th class="col-md-1"></th>
+				<th class="col-md-3">아이디</th>
+				<th class="col-md-2">이름</th>
+				<th class="col-md-4">가입날짜</th>
+				<th class="col-md-2"></th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="userList" items="${requestScope.userList }" varStatus="status">
-				<input type="hidden" id="uId" value="${ userList.uId }">
+				
 				<tr>
 					<td>${status.count}</td>
 					<td id="emailId">
@@ -56,7 +58,10 @@
 						${ userList.reg_date }
 					</td>
 					<td>
-						
+						<button type="button" class="btn btn-danger btn-md userDeleteBtn" value="${ userList.uId }"
+							onclick="deleteUser( $(this).val() )")>삭제
+							
+						</button>
 					</td>
 				</tr>
 			</c:forEach>
@@ -65,6 +70,21 @@
 	
 	</div>
 </div>
+
+
+	<script>
+	
+		
+		function deleteUser(uId) {
+			
+			//alert(uId);
+			window.location.href="userMgmt.do?service=DELETE&deleteId="+uId;
+			
+		}
+		 
+		
+	
+	</script>
 
 </body>
 </html>

@@ -14,7 +14,6 @@
     <servlet-name>FirstServlet</servlet-name>
     <url-pattern>/FirstServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>RegisterServlet</display-name>
@@ -100,7 +99,7 @@
   <servlet-mapping>
     <servlet-name>UserMgmtServlet</servlet-name>
     <url-pattern>/userMgmt.do</url-pattern>
-   </servlet-mapping>
+  </servlet-mapping>
   <servlet>
     <display-name>SearchServlet</display-name>
     <servlet-name>SearchServlet</servlet-name>
@@ -110,8 +109,6 @@
     <servlet-name>SearchServlet</servlet-name>
     <url-pattern>/search.do</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description></description>
     <display-name>FriendRequestServlet</display-name>
@@ -122,5 +119,14 @@
     <servlet-name>FriendRequestServlet</servlet-name>
     <url-pattern>/reqFriend.do</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>StatsMgmtServlet</display-name>
+    <servlet-name>StatsMgmtServlet</servlet-name>
+    <servlet-class>admin.controller.StatsMgmtServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StatsMgmtServlet</servlet-name>
+    <url-pattern>/statsMgmt.do</url-pattern>
+  </servlet-mapping>
 </web-app>
