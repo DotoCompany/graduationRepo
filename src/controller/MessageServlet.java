@@ -25,6 +25,7 @@ public class MessageServlet extends HttpServlet {
 		response.setContentType("application/utf-8");
 		
 		String friendCode = request.getParameter("friendCode");
+		String friendImage = request.getParameter("friendImage");
 		HttpSession session = request.getSession();
 		String userCode = (String) session.getAttribute("userCode");
 		
@@ -33,6 +34,9 @@ public class MessageServlet extends HttpServlet {
 		for(int i=0;i<arrayList.size();i++) {
 			System.out.println(arrayList.get(i).getBody());
 		}
+		request.setAttribute("arrayList", arrayList);
+		request.setAttribute("friendImage",friendImage);
+		request.setAttribute("friendCode", friendCode);
 		request.getRequestDispatcher("form_message.jsp").forward(request, response);
 		
 		

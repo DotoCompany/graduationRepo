@@ -17,4 +17,7 @@ public class MessageManager {
 	public ArrayList<MessageDTO> getMessage(String userCode,String friendCode) {
 		return MessageDAO.getInstance().getMessage(userCode, friendCode);
 	}
+	public int sendMsg(String uId,String friendCode,String msg) {
+		return MessageDAO.getInstance().sendMsg(uId,friendCode,msg);
+	}
 }

@@ -169,4 +169,24 @@
     <servlet-name>AdminLogoutServlet</servlet-name>
     <url-pattern>/adminLogout.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MessageSendServlet</display-name>
+    <servlet-name>MessageSendServlet</servlet-name>
+    <servlet-class>controller.MessageSendServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MessageSendServlet</servlet-name>
+    <url-pattern>/messageSend.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LifeLogListServlet</display-name>
+    <servlet-name>LifeLogListServlet</servlet-name>
+    <servlet-class>controller.LifeLogListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifeLogListServlet</servlet-name>
+    <url-pattern>/lifelogget.do</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -25,6 +25,7 @@ body {
     padding: 5px;
     display: inline-block;
     background-color: #8db4c5;
+    
 }
 
 #messageArea {
@@ -35,6 +36,7 @@ body {
     background-color: #abd2ff;
     border: none;
     border-radius: 15px;
+    overflow:scroll;
 }
 
 #message_bottom {
