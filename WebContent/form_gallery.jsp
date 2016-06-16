@@ -10,7 +10,6 @@
 </script>
 <c:forEach var="lifeLogViewDTO" items="${requestScope.arrayList }">
 	<img src="${lifeLogViewDTO.url }" onclick="javascript:detailsee(${lifeLogViewDTO.llId})">
-	<p>${lifeLogViewDTO.llId }</p>
 </c:forEach>
 
 	
