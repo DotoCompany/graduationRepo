@@ -7,7 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<title>RECALL 관리자로그인</title>
-	<!--  푸쉬 주석  -->
 	
 	<!-- imported sources -->
    	
