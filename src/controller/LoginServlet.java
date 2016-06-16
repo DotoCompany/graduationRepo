@@ -31,16 +31,13 @@ public class LoginServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		response.setContentType("application/json;charset=utf-8");
-		//System.out.println("로긴 와쪙");
+		
 		String loginId = request.getParameter("loginId");
 		String loginPwd = request.getParameter("loginPwd");
 		
-		
 		String userAgent = request.getHeader("User-Agent").split("/")[0];
 		
-		
 		System.out.println(userAgent);
-		
 		System.out.println("요청온 아이디 : "+loginId);
 		System.out.println("요청온 패스워드 : "+loginPwd);
 		
@@ -48,6 +45,13 @@ public class LoginServlet extends HttpServlet {
 		UserDTO userDTO = userM.getUser(loginId, loginPwd);
 		
 		System.out.println(" userDTO : " + userDTO);
+
+ 		if(userDTO==null) {  // 로그인 실패시
+ 			response.getWriter().println(-1);
+ 		} else {  // 로그인 성공시
+ 			response.getWriter().println(1);
+ 		}
+			
 		
 		JSONObject loginJson = new JSONObject();
 		/*---------------모바일을 사용하는 경우 --------------------*/
@@ -91,15 +95,8 @@ public class LoginServlet extends HttpServlet {
 	         {
 	            oldSession.invalidate();
 	         }
-	         request.getRequestDispatcher("main.jsp").forward(request, response);
-	         //request.getRequestDispatcher("markerMap.jsp").forward(request, response);
 		} catch(Exception ex) {
-			request.setAttribute("isLogin", "false");
-			RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
-			rd.forward(request, response);
-		}
-		
-		
+			System.out.println(ex.getMessage());
+		}	
 	}
-	
 }

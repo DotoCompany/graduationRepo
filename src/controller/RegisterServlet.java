@@ -37,19 +37,20 @@ public class RegisterServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
+		String isCheck = request.getParameter("isCheck");
+		int resultCode = -1;
 		
 		UserManager userM = UserManager.getInstance();
-		int resultCode = userM.insertUser(email,name,password);
+		if(isCheck.equals("true")) {
+			resultCode = userM.insertUser(email,name,password);
+			resultCode = 1;
+		}
+		response.getWriter().println(resultCode);
 		
 		String userAgent = request.getHeader("User-Agent").split("/")[0];
-		System.out.println("email : "+email);
-		System.out.println("name : "+name);
-		System.out.println("password : "+password);
-		System.out.println("userAgent : "+userAgent);
 		
 		/*---------------모바일 앱 --------------------*/
 		if(userAgent.equals("okhttp")) {
-			System.out.println("if_okhttp");
 			JSONObject registerJson = new JSONObject();
 			if(resultCode==1)
 				registerJson.put("resultCode", "1");
@@ -57,22 +58,5 @@ public class RegisterServlet extends HttpServlet {
 				registerJson.put("resultCode","0");
 			return ;
 		}
-		/*---------------웹 브라우저 --------------------*/
-		else {
-			if ( resultCode == 1 ) {
-				request.setAttribute("isRegister", "true");
-				request.getRequestDispatcher("login.jsp").forward(request, response);
-			}
-			else {
-				request.setAttribute("isRegister", "false");
-				request.getRequestDispatcher("sign_up.jsp");
-			}
-			
-			
-		}
-		
-		
-		
 	}
-
 }

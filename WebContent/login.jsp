@@ -10,10 +10,11 @@
 %>
 
 <!-- Imported sources -->
+
 <script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=no">
-
+<script src="<%=request.getContextPath() %>/js/login.js" ></script>
 <!-- Custom sources -->
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/login.css">
@@ -51,14 +52,13 @@
 			</div>
 
 			<div id="login_bt_div">
-				<input type="submit" id="loginBtn" class="normal_bt" value="Login" />
+				<input type="button" id="loginBtn" class="normal_bt" value="Login" />
 			</div>
 
 			<div id="bottom_div">
 				<p class="bottom_comment">
 					No account yet?<br> <a
-						href="<%=request.getContextPath()%>/register.jsp" class="a_tag">Register
-						now</a>
+						href="<%=request.getContextPath()%>/register.jsp" class="a_tag">Register now</a>
 				</p>
 			</div>
 		</form>

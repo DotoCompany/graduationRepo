@@ -46,6 +46,16 @@ public class UserManager {
 	}
 	
 	/**
+	 * 아이디가 있는건지 없는건지 확인하는 메서드
+	 * @param email 사용자 이메일
+	 * @return 1: 아이디 있음 / 0:아이디없음
+	 */
+	public byte getUser(String email) {
+		return userDao.getUser(email);
+	}
+	
+	
+	/**
 	 * 유저를 삭제하기 위한 메소드
 	 * @param emailId
 	 * @param pwd

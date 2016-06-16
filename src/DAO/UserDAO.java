@@ -194,6 +194,38 @@ public class UserDAO {
 		return userDTO;
 	}
 	
+	public byte getUser(String email) {
+		byte result = 0;
+		PreparedStatement pstmt = null;
+		UserDTO userDTO = null;
+		Connection conn = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = DBConnection.getInstance().getConn();
+						
+			String sql = "select * from user_tb where email_id=?;";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,email);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				result = 1;
+			}
+		} catch ( Exception ex ) {
+			ex.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				rs.close();
+				conn.close();
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		return result;
+	}
+	
 	/**
 	 * 전체 유저를 불러오는 메소드. Admin 페이지에서 사용
 	 * @return List<UserDTO>

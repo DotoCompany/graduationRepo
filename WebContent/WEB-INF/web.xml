@@ -181,6 +181,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>CheckIDServlet</display-name>
+    <servlet-name>CheckIDServlet</servlet-name>
+    <servlet-class>controller.CheckIDServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckIDServlet</servlet-name>
+    <url-pattern>/checkID.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>LifeLogListServlet</display-name>
     <servlet-name>LifeLogListServlet</servlet-name>
     <servlet-class>controller.LifeLogListServlet</servlet-class>
@@ -188,5 +198,15 @@
   <servlet-mapping>
     <servlet-name>LifeLogListServlet</servlet-name>
     <url-pattern>/lifelogget.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CommentListServlet</display-name>
+    <servlet-name>CommentListServlet</servlet-name>
+    <servlet-class>controller.CommentListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CommentListServlet</servlet-name>
+    <url-pattern>/commentget.do</url-pattern>
   </servlet-mapping>
 </web-app>

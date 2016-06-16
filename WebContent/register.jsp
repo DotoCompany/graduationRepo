@@ -34,7 +34,7 @@
 		<div id="idpw_div">
 			<input class="login_input" name="email" id="muEmailIdForm" type="email" placeholder="E-Mail" /><br>
 			<input class="login_input" name="password" id="muPasswordForm" type="password" placeholder="Password" />
-			<input class="login_input" name="password" id="muPasswordConfirmForm" type="password" placeholder="Password confirm" />
+			<input class="login_input" name="password2" id="muPasswordConfirmForm" type="password" placeholder="Password confirm" />
 		</div>
 
 		<div id="muResultForm">
@@ -43,7 +43,7 @@
 		<input type="hidden" id="passwordCheckHiddenTag" value="false">
 
 		<div id="login_bt_div">
-			<input type="submit" id="signUpBtn1" class="normal_bt" value="Sign up" />
+			<input type="button" id="signUpBtn1" class="normal_bt" value="Sign up" />
 		</div>
 
 		<div id="bottom_div">
@@ -53,6 +53,7 @@
 				account. <a href="<%=request.getContextPath()%>/policy.jsp" class="a_tag" target="_blank">View</a>
 			</p>
 		</div>
+		<input type="hidden" name="isCheck" id="isCheck" value="false"/>
 	</form>
 	</div>
 </body>
