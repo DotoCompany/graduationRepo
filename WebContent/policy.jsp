@@ -11,6 +11,8 @@
 </head>
 
 <body>
+<div id="background">
+		<img src="<%=request.getContextPath()%>/image/background.jpg" class="stretch"/>
 	<form class="main_div">
 		<div id="logo_div">
 			<img id="logo" src="<%=request.getContextPath()%>/image/logo.png" />
@@ -212,5 +214,6 @@
                                                            </textarea>
 		</fieldset>
 	</form>
+	</div>
 </body>
 </html>

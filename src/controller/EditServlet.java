@@ -49,6 +49,7 @@ public class EditServlet extends HttpServlet {
 						+ "/"+userCode+"/" + fileName);*/
 				String dir=getServletContext().getRealPath("")
 						+File.separator+"userImage"+File.separator+fileName;
+				
 				System.out.println("dir----"+dir);
 				part.write(dir);
 				writer.print("<br/>"+dir);

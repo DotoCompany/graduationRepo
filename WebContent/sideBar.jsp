@@ -18,9 +18,9 @@
 					</div>
 			</a></li>
 			
-			<li><a href="<%=request.getContextPath()%>/photo.jsp">
+			<li><a href="<%=request.getContextPath()%>/gallery.jsp">
 					<div id="sideBar_photo">
-						<span>Photo</span>
+						<span>Gallery</span>
 					</div>
 			</a></li>
 			<li><a href="">
@@ -34,7 +34,7 @@
 					</div>
 			</a></li>
 			
-			<li><a href="">
+			<li><a href="<%=request.getContextPath()%>/friends.jsp">
 					<div id="sideBar_friends">
 						<span>Friends</span>
 					</div>
