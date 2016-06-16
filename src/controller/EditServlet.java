@@ -4,13 +4,16 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+
+import DTO.LifeLogBodyDTO;
+import DTO.LifeLogDTO;
+import DTO.LifeLogPhotoDTO;
 
 /**
  * Servlet implementation class EditServlet
@@ -35,6 +38,7 @@ public class EditServlet extends HttpServlet {
 		String realPath = context.getRealPath("/");
 		String dirName = realPath + File.separator + "userImage";*/
 		
+		LifeLogDTO ll = null; LifeLogBodyDTO llb = null; LifeLogPhotoDTO llp = null;
 		
 		File dirR = new File(dirName);
 		if (!dirR.exists()) {
