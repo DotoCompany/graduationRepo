@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <style>
-#friendImage{
+.userImage{
 	width:120px;
 	height:100px;
 }
@@ -29,26 +29,26 @@ window.onload= function(){
 <c:forEach var="friends" items="${requestScope.friends }">
 	<tr>
 		<td rowspan="4" colspan="3">
-			<c:if test="${friends.image == null }">
-				<img src="image/default_profile_image.png"/>
+			<c:if test="${friends.image == 0 }">
+				<img src="image/default_profile_image.png" class="userImage"/>
 			</c:if>
-			<c:if test="${friends.image !=null }">
-				<img src="${friends.image }" id="friendImage" />
+			<c:if test="${friends.image !=0 }">
+				<img src="${friends.image }" id="friendImage" class="userImage"/>
 			</c:if>
 			
 			
 			
 		</td>
 		<tr>
-			<td id="friendName">${friends.friendName }</td>
+			<td id="friendName">${friends.name }</td>
 		</tr>
 		<tr>
-			<td id="friendEmail">${friends.friendEmail }</td>
+			<td id="friendEmail">${friends.emailId }</td>
 		</tr>
 		<tr>
 			<td>
-				<input type="button" value="메시지 " id="messageBtn" class="btn btn-success btn-lg" onclick="javascript:messageBtn('${friends.friendCode }')"/>
-				<input type="button" value="친구삭제" class="btn btn-cancel btn-lg" id="friendDeleteBtn"/>
+				<input type="button" value="친구추가 " id="requestFriendBtn" class="btn btn-success btn-lg" onclick="javascript:requestFriend('${friends.uId }')"/>
+				
 			</td>
 		</tr>
 	</tr>

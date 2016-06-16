@@ -6,12 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+
 import java.util.List;
 
+
+import DTO.UserDTO;
 import model.DBConnection;
 import util.crypt.BCrypt;
 import util.crypt.SHA256;
-import DTO.UserDTO;
 
 public class UserDAO {
 	
@@ -378,4 +380,40 @@ public class UserDAO {
 	    }
 		return success;
     }
+	/**
+	 * 검색바 검색할 시 호출되는 메소드.
+	 * @param searchBox
+	 * @return
+	 */
+	public ArrayList<UserDTO> searchUser(String searchBox) {
+		ArrayList<UserDTO> arrayList = new ArrayList<UserDTO>();
+		PreparedStatement pstmt = null;;
+		ResultSet rs = null;
+		Connection conn = null;
+		try {
+			conn = DBConnection.getInstance().getConn();
+			String sql = "select * from user_tb where email_id Like ? or name Like ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, '%'+searchBox+'%');
+			pstmt.setString(2, '%'+searchBox+'%');
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				arrayList.add(new UserDTO( Integer.toString(rs.getInt("u_id")),rs.getString("image"), rs.getString("email_id"),rs.getString("name"),rs.getTimestamp("reg_date").toString()  ));
+			}
+			
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+				rs.close();
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		return arrayList;
+		
+		
+	}
 }
