@@ -44,9 +44,9 @@ img {
 <script type="text/javascript">
 window.onload=function(){
 	$.ajax({
+		type:"post",
 		url:"lifelogget.do",
 		success: function(data){
-			alert(data);
 			$("#photoArea").html(data);
 		}
 	});
@@ -57,9 +57,6 @@ window.onload=function(){
 <h1 id="titlebar">RECALL-Photo</h1>
 <div id="photoDiv">
 	<div id="photoArea">
-		<%for(int i=0;i<2;i++){ %>
-			<img src="/userImage/8기_단체사진.jpg">
-		<%} %>
 	</div>
 </div>
 

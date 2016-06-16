@@ -3,6 +3,7 @@ package DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import DTO.LifeLogViewDTO;
@@ -14,6 +15,7 @@ public class LifeLogListDAO {
 		lifeLogListDAO = new LifeLogListDAO();
 	}
 	private LifeLogListDAO(){};
+	public static LifeLogListDAO getInstance(){return lifeLogListDAO;}
 	public ArrayList<LifeLogViewDTO> searchLifeLog(){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -23,6 +25,10 @@ public class LifeLogListDAO {
 			conn = DBConnection.getInstance().getConn();
 			String sql = "select * from life_log_view";
 			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				arrayList.add(new LifeLogViewDTO(Integer.toString(rs.getInt("u_id")), Integer.toString(rs.getInt("ll_id")), rs.getTimestamp("upload_date").toString(), rs.getString("ispublic"),rs.getString("url"),rs.getString("body"),Integer.toString(rs.getInt("seq")), Float.toString(rs.getFloat("lat")), Float.toString(rs.getFloat("lng"))));
+			}
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		} finally {
