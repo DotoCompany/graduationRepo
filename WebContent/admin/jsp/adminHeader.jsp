@@ -129,14 +129,14 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 통계<!-- <span class="fa arrow"></span> --></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                	<a class="btn btn-link" href="<%=request.getContextPath()%>/statsMgmt.do" style="color:black;">마켓 전체 통계</a> 
+                                	<a class="btn btn-link" href="<%=request.getContextPath()%>/statsMgmt.do" style="color:black;">회원 전체 통계</a> 
                                     <%-- <a href="<%=request.getContextPath()%>/adminStats?service=marketTotStats" style="font-size: 1.2em;" disabled>마켓 전체 통계</a> --%>
                                     <%-- <form action="<%=request.getContextPath()%>/adminStats" id="marketTotFm" method="post">
                                     	<button type="button" class="btn btn-link marketTotBtn" href="<%=request.getContextPath()%>/statsMgmt.do" style="color: #333333;">회원 전체 통계</button>
                                     </form>  --%>
                                 </li>
                                 <li>
-                                	<a class="btn btn-link" href="#" disabled>마켓 방문자별 통계</a> 
+                                	<a class="btn btn-link" href="#" disabled>블로그 전체 통계</a> 
                                 	<!-- <button type="button" class="btn btn-link" disabled>블로그 전체 통계</button> --> 
                                     <%-- <a href="<%=request.getContextPath()%>/adminStats?service=marketVisitorTotStats">마켓 방문자별 통계</a> --%>
                                 </li>

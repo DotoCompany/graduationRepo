@@ -27,7 +27,7 @@ public class AdminLoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		
-		/*AdminUserDAO.getInstance().insertUser(new AdminUser("", "daesub0515@gmail.com", "1234","Daesub Kim", "010-9998-2666", "","ADMIN"));*/
+		/**/
 		
 		String loginId = request.getParameter("adminId");
 		String loginPwd = request.getParameter("adminPwd");

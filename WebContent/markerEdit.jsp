@@ -27,12 +27,12 @@
 <body>
 <div id="all">
 
-	<input type="hidden" id="mId"
+	<%-- <input type="hidden" id="mId"
 		value="${ param.m_id }">
 	<input type="hidden" id="lat"
 		value="${ param.lat }">
 	<input type="hidden" id="lng"
-		value="${ param.lng }">
+		value="${ param.lng }"> --%>
 	
 
 	<div id="sideBarDiv">
@@ -45,6 +45,13 @@
 		<div class="container-fluid">
 			
 			<form role="form" method="post" action="edit.do" id="form" enctype="multipart/form-data">
+				
+				<input type="hidden" id="mId" name="mId"
+					value="${ param.m_id }">
+				<input type="hidden" id="lat" name="lat"
+						value="${ param.lat }">
+				<input type="hidden" id="lng" name="lng"
+						value="${ param.lng }">
 				
 			<div class="centered text-center">
         		<img id="image" class="icon icons8-Image-File" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAADgElEQVRoQ+2aTVLbMBTH/4qZdNn0BIUTkAxm3XCClhOUbGqzanICyAkCK+JuoCcoPQF0HTMJJyA5QemyM8XqyE4IsfXp2ErSqVeZiT7eT3/p6elJBLrf8GIbfyqfATRBUNetJi5HxwBu4dAuGsfsdyEf0WplEPRA0NYqa17oESTqYO/4yrxqtoYaaBAMi1FEZS5tw/XPVaVU/8uBwv4ZQNg0s/TRK7h+a5nOxEBszTxVHlKNTwC04USj3PN+eFnD0+8rgLznG74clBgoq84ETrWORutxmRGM6w6/1PFEhxKHkVspMVB27RzC9a6Xhpk1EAZU3lY+pSQKpTp0qm8KUUcbiBU0h9IHcj21RzSRT6nQrDEzqA0AMlNqQ4D0oTYIKIY6h+tLI5YNAwJAopYsTNo8IOARTtQQbeyrBGIb9GsTx/ii7Fe43hGv7uqABhdNkAqLsN+aQ9ExXH9nvYB0KRg4KqcgeLdQRbAvrk4hXaA49uMEyqUCJR32ADo9yZIRnKiTOyLnwaYji9KAEhgWOddSdki9kYlAcVlrQGH/WnK2+Q7X/2Bs/EoVCoOfHHWmJom9kTGkPYUC2X4ygettGxu/WoX+tSmXOIURZ9f/BSeqSz3dXXACRBOtFJa1Kfe8TxCWIZq6bTqCQ9sKmDYoetPZpT7eWwXKs0jC/gNAputLw3msNdDdxRFo5XJhHBTHAnv7UD51OHsXvYXrHwibW1uF+AnMhMOJdoTrzjpQkhHtAaQGh3TR+MQ8X/YbBCxyPuH+R9DBnnfG/c860GJikh/HJdDDuTNImU4xwr7XWD0Qb9SZcVvVg4XkpEydGYVo2llTSJanjqGiw3hdhMFHAOo7ING0swYU9m8A0szj7Lh1KH5g38u2ZwUoyQvcFAbzPO04eXQrQEWrMx+ZbChUOlBZ6sRQnAxp6UDlqQPw1pEFIMnRe8lVRdHFvne60ErpQEvabFz9P1B6yDRHxHik81bQtGczMqdsEAoHKvrS2ESpYlLB/RFAdl/0qz73mxhpUjYMWLLy27wKvYfrcx9QGTy8oGM4rxqFXu3rQHGPHOKrScOnMXQMija26H2hiXgeWPycjeyCgGWTFpOVkpPtmj1e0pFMfnGsfkwRZtaSTq8llRGvnVmHaqDYZdp+ZsYbD/WVPqulB8RKxq6TsDcCzZT3K0mNOOq+nz7jPNNds38B1k0RU9+x6voAAAAASUVORK5CYII=" width="80" height="80">
@@ -86,7 +93,7 @@
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<div class="row">
 						<div id="map" class="col-sm-9 col-lg-9 col-md-9">
-							<textarea class="form-control" rows="22" placeholder="내용을 입력하세요..."></textarea>
+							<textarea name="body" class="form-control" rows="22" placeholder="내용을 입력하세요..."></textarea>
 						</div>
 					</div>
 					<br><br>

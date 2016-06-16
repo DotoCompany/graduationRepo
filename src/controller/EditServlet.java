@@ -17,7 +17,9 @@ import javax.servlet.http.Part;
  */
 @MultipartConfig
 public class EditServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
+	
  
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -27,13 +29,16 @@ public class EditServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("application/json;charset=utf-8");
 		
+		final String dirName = this.getServletContext().getRealPath("/") + File.separator + "userImage";
 		
-		ServletContext context = this.getServletContext();
+		/*ServletContext context = this.getServletContext();
 		String realPath = context.getRealPath("/");
-		String dirName = realPath + File.separator + "uploadFiles";
+		String dirName = realPath + File.separator + "userImage";*/
+		
+		
 		File dirR = new File(dirName);
 		if (!dirR.exists()) {
-		dirR.mkdir();
+			dirR.mkdir();
 		}
 		System.out.println("dirName: " + dirName);
 		
@@ -47,8 +52,10 @@ public class EditServlet extends HttpServlet {
 			if (fileName != null && !fileName.isEmpty()) {
 				/*part.write(getServletContext().getRealPath("/WEB-INF")
 						+ "/"+userCode+"/" + fileName);*/
-				String dir=getServletContext().getRealPath("")
-						+File.separator+"userImage"+File.separator+fileName;
+				/*String dir=getServletContext().getRealPath("")
+						+File.separator+"userImage"+File.separator+fileName;*/
+				
+				String dir = dirName+File.separator+fileName;
 				
 				System.out.println("dir----"+dir);
 				part.write(dir);
@@ -56,8 +63,18 @@ public class EditServlet extends HttpServlet {
 				writer.print("<br>업로드한 파일 이름: " + fileName);
 				writer.print("<br/>크기: " + part.getSize());
 				
-					completeImage=File.separator+"graduationRepo"+File.separator+"userImage"+File.separator+fileName;
-					
+				completeImage = File.separator+"graduationRepo"+File.separator+"userImage"+File.separator+fileName;
+				
+				
+				System.out.println(
+						
+						request.getSession().getAttribute("userCode") + " " +
+						request.getParameter("mId") + " " +
+						request.getParameter("body") + " "
+						
+						);
+				
+				
 			}
 			
 

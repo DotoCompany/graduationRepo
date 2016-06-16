@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import DTO.UserDTO;
+import admin.dao.AdminUserDAO;
+import admin.dto.AdminUser;
 import admin.manager.UserMgmtManager;
 
 /**
@@ -49,6 +51,8 @@ public class UserMgmtServlet extends HttpServlet {
 					
 					if(service.equals("ADD")) {
 						
+						System.out.println(service + " " + request.getParameter("adminId"));
+						AdminUserDAO.getInstance().insertUser(new AdminUser("", request.getParameter("adminId"), request.getParameter("adminPwd"),"Daesub Kim", "010-9998-2666", "","ADMIN"));
 						
 					} else if(service.equals("DELETE")) {
 						
