@@ -21,7 +21,8 @@ window.onload = function() {
 					if (data == -1) {
 						alert("아이디나 비밀번호를 잘못 입력하셨습니다.");
 					} else if (data == 1) {
-						 window.location.replace("login.jsp")
+						 /*window.location.replace("login.jsp");*/
+						window.location= "login.jsp";
 					}
 				}
 			});

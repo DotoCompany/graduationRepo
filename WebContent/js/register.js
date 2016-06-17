@@ -74,7 +74,6 @@ window.onload = function() {
 			$("#muResultFormSpan").focus();
 			return;
 		} else if ($("#isCheck").val() == "true") {
-			$("#signUpForm").submit();
 			$.ajax({
 				type : "post",
 				url : "register.do",
