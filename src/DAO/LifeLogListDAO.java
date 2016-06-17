@@ -43,4 +43,31 @@ public class LifeLogListDAO {
 		return arrayList;
 	}
 	
+	public LifeLogViewDTO searchLifeLogById(String llId){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		LifeLogViewDTO lifeLog = null;
+		try {
+			conn = DBConnection.getInstance().getConn();
+			String sql = "select * from life_log_view where ll_id=?;";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, llId);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				lifeLog = new LifeLogViewDTO(Integer.toString(rs.getInt("u_id")), Integer.toString(rs.getInt("ll_id")), rs.getTimestamp("upload_date").toString(), rs.getString("ispublic"),rs.getString("url"),rs.getString("body"),Integer.toString(rs.getInt("seq")), Float.toString(rs.getFloat("lat")), Float.toString(rs.getFloat("lng")));
+			}
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+				rs.close();
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		return lifeLog;
+	}
 }

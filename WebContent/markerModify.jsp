@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Edit LifeLog</title>
+<title>View LifeLog</title>
 </head>
 
 
@@ -15,24 +15,14 @@
     <script src="<%=request.getContextPath()%>/common/js/bootstrap.min.js"></script>
     <link href="<%=request.getContextPath()%>/common/css/bootstrap.min.css" rel="stylesheet">
 
-
 <!-- Custom sources -->
-	<%-- <script src="<%=request.getContextPath()%>/js/markerEdit.js"></script> --%>
 	<link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/markerEdit.css">
-
-
-
+	href="<%=request.getContextPath()%>/css/markerView.css">
 
 <body>
 <div id="all">
 
-	<%-- <input type="hidden" id="mId"
-		value="${ param.m_id }">
-	<input type="hidden" id="lat"
-		value="${ param.lat }">
-	<input type="hidden" id="lng"
-		value="${ param.lng }"> --%>
+	
 	
 
 	<div id="sideBarDiv">
@@ -44,19 +34,24 @@
 		
 		<div class="container-fluid">
 			
-			<form role="form" method="post" action="edit.do" id="form" enctype="multipart/form-data">
+			<form role="form" method="post" action="edit.do?service=MODIFY" id="form" enctype="multipart/form-data">
 				
-				<input type="hidden" id="service" name="service"
-					value="ADD">
-				<input type="hidden" id="mId" name="mId"
-					value="${ param.m_id }">
-				<input type="hidden" id="lat" name="lat"
-						value="${ param.lat }">
-				<input type="hidden" id="lng" name="lng"
-						value="${ param.lng }">
+				<input type="hidden" id="llId" name="llId" 
+					value="${ param.llId }">
+				<input type="hidden" id="lat" name="lat" 
+					value="${ param.lat }">
+				<input type="hidden" id="lng" name="lng" 
+					value="${ param.lng }">
+				<input type="hidden" id="url" name="url" 
+					value="${ param.url }">
+				<input type="hidden" id="body" name="body" 
+					value="${ param.body }">
+				<input type="hidden" id="isPublic" name="isPublic"
+					value="${ param.isPublic }">
+				
 				
 			<div class="centered text-center">
-        		<img id="image" class="icon icons8-Image-File" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAADgElEQVRoQ+2aTVLbMBTH/4qZdNn0BIUTkAxm3XCClhOUbGqzanICyAkCK+JuoCcoPQF0HTMJJyA5QemyM8XqyE4IsfXp2ErSqVeZiT7eT3/p6elJBLrf8GIbfyqfATRBUNetJi5HxwBu4dAuGsfsdyEf0WplEPRA0NYqa17oESTqYO/4yrxqtoYaaBAMi1FEZS5tw/XPVaVU/8uBwv4ZQNg0s/TRK7h+a5nOxEBszTxVHlKNTwC04USj3PN+eFnD0+8rgLznG74clBgoq84ETrWORutxmRGM6w6/1PFEhxKHkVspMVB27RzC9a6Xhpk1EAZU3lY+pSQKpTp0qm8KUUcbiBU0h9IHcj21RzSRT6nQrDEzqA0AMlNqQ4D0oTYIKIY6h+tLI5YNAwJAopYsTNo8IOARTtQQbeyrBGIb9GsTx/ii7Fe43hGv7uqABhdNkAqLsN+aQ9ExXH9nvYB0KRg4KqcgeLdQRbAvrk4hXaA49uMEyqUCJR32ADo9yZIRnKiTOyLnwaYji9KAEhgWOddSdki9kYlAcVlrQGH/WnK2+Q7X/2Bs/EoVCoOfHHWmJom9kTGkPYUC2X4ygettGxu/WoX+tSmXOIURZ9f/BSeqSz3dXXACRBOtFJa1Kfe8TxCWIZq6bTqCQ9sKmDYoetPZpT7eWwXKs0jC/gNAputLw3msNdDdxRFo5XJhHBTHAnv7UD51OHsXvYXrHwibW1uF+AnMhMOJdoTrzjpQkhHtAaQGh3TR+MQ8X/YbBCxyPuH+R9DBnnfG/c860GJikh/HJdDDuTNImU4xwr7XWD0Qb9SZcVvVg4XkpEydGYVo2llTSJanjqGiw3hdhMFHAOo7ING0swYU9m8A0szj7Lh1KH5g38u2ZwUoyQvcFAbzPO04eXQrQEWrMx+ZbChUOlBZ6sRQnAxp6UDlqQPw1pEFIMnRe8lVRdHFvne60ErpQEvabFz9P1B6yDRHxHik81bQtGczMqdsEAoHKvrS2ESpYlLB/RFAdl/0qz73mxhpUjYMWLLy27wKvYfrcx9QGTy8oGM4rxqFXu3rQHGPHOKrScOnMXQMija26H2hiXgeWPycjeyCgGWTFpOVkpPtmj1e0pFMfnGsfkwRZtaSTq8llRGvnVmHaqDYZdp+ZsYbD/WVPqulB8RKxq6TsDcCzZT3K0mNOOq+nz7jPNNds38B1k0RU9+x6voAAAAASUVORK5CYII=" width="80" height="80">
+				<img id="image" src="${ param.url }">
 				<input type="file" id="file" name="file" />
     		</div>
     		<br><hr><br>
@@ -70,7 +65,7 @@
 						<div class="col-sm-9 col-lg-9 col-md-9 col-sm-offset-3 col-lg-offset-3 col-md-offset-3" >
 							
 							<div class="panel panel-default">
-					    		<div class="panel-heading">Your marker located : <br>( Lat : <c:out value="${ param.lat }" /> / Lng : <c:out value="${ param.lng }" /> )</div>
+					    		<div class="panel-heading">Your marker located : <br>( Lat : <c:out value="${ lat }" /> / Lng : <c:out value="${ lng }" /> )</div>
 					    		<div class="panel-body" id = "mapScope">
 				  	        		<div id="map" style="height:230px;"></div> 
 				  	        	</div>
@@ -95,16 +90,20 @@
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<div class="row">
 						<div id="map" class="col-sm-9 col-lg-9 col-md-9">
-							<textarea name="body" class="form-control" rows="22" placeholder="내용을 입력하세요..."></textarea>
+							<textarea id="modifyBody" name="modifyBody" class="form-control" rows="22" placeholder="내용을 입력하세요..." > ${ body }</textarea>
 						</div>
 					</div>
 					<br><br>
 					<div class="row">
 						<div id="map" class="col-sm-9 col-lg-9 col-md-9 text-right">
+						
 							<div id="btn">
-								<button type="button" class="btn btn-success btn-lg" id= "saveBtn" value="저장">저장</button>
-								<button type="button" class="btn btn-default btn-lg" id= "cancelBtn" value="취소">취소</button>
+									<button type="button" class="btn btn-danger btn-lg" id= "cancelBtn" value="취소">취소</button>
+									<button type="button" class="btn btn-success btn-lg" id= "modifyBtn" value="수정">수정</button>
+    								
 							</div>
+							
+							
 						</div>
 					</div>
 					
@@ -120,7 +119,7 @@
 	</div> <!-- End of centerDiv -->
 	
 	<!-- Custom sources -->
-	<script src="<%=request.getContextPath()%>/js/markerEdit.js"
+	<script src="<%=request.getContextPath()%>/js/markerModify.js"
 		type="text/javascript" charset="utf-8"></script>
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv59_KYHHzRqtky9EwzOJ7WY-Pb5XMGlc"

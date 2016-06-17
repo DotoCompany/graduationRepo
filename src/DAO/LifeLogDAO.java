@@ -101,6 +101,134 @@ public class LifeLogDAO {
 		
 		return success;
 	}
+	
+	public int deleteLifeLog(String llId) {
+		
+		final String deletelldSql = "delete from life_log_body where ll_id_fk=?;";
+		final String deletellpSql = "delete from life_log_photo where ll_id_fk=?;";
+		final String deletellSql = "delete from life_log where ll_id=?;";
+		int success = 0;
+		PreparedStatement pstmt = null;
+		Connection conn = null;
+		
+		try {
+			conn = DBConnection.getInstance().getConn();
+			conn.setAutoCommit(false);
+			
+			pstmt = conn.prepareStatement(deletelldSql);
+			/*아랫줄은 PreparedStatement객체에 값을 대입해주는 코드들이다.*/
+			pstmt.setString(1, llId);
+			success = pstmt.executeUpdate();
+			if(success > 0) {
+				
+				pstmt = conn.prepareStatement(deletellpSql);
+				pstmt.setString(1, llId);
+				success = pstmt.executeUpdate();
+				
+				pstmt = conn.prepareStatement(deletellSql);
+				pstmt.setString(1, llId);
+				success = pstmt.executeUpdate();
+			}
+					
+			conn.commit();
+		} catch (SQLException e ) {
+	        e.printStackTrace();
+	        if (conn != null) {
+	            try {
+	                System.err.print("Transaction is being Rolled back");
+	                conn.rollback();
+	            } catch(SQLException se) {
+	                se.printStackTrace();
+	            }
+	        }
+	    } catch (Exception e) {
+	    	e.printStackTrace();
+	    	if (conn != null) {
+	            try {
+	                System.err.print("Transaction is being Rolled back");
+	                conn.rollback();
+	            } catch(SQLException se) {
+	                se.printStackTrace();
+	            }
+	        }
+	    } finally {
+	    	if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+            if (conn != null) {
+            	try { 
+            		conn.setAutoCommit(true);
+                	conn.close(); 
+            	} catch(SQLException ex) {}
+            } 
+	    }
+		
+		return success;
+	}
+	
+	public int modifyLifeLog(String ll_id, String isPublic, String body, String url) {
+		
+		final String llSql = "update life_log set upload_date=?, isPublic=? where ll_id=?;";
+		final String llbSql = "update life_log_body set body=? where ll_id_fk=?;";
+		final String llpSql = "update life_log_photo set url=? where ll_id_fk=?;";
+		
+		int success = 0;
+		PreparedStatement pstmt = null;
+		Connection conn = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = DBConnection.getInstance().getConn();
+			conn.setAutoCommit(false);
+			
+			pstmt = conn.prepareStatement(llSql);
+			/*아랫줄은 PreparedStatement객체에 값을 대입해주는 코드들이다.*/
+			pstmt.setString(1,new Timestamp(new java.util.Date().getTime()).toString());
+			pstmt.setString(2, isPublic);pstmt.setString(3, ll_id);
+			success = pstmt.executeUpdate();
+			if(success > 0) {
+		
+					pstmt = conn.prepareStatement(llbSql);
+					pstmt.setString(1, body);pstmt.setString(2, ll_id);
+					success = pstmt.executeUpdate();
+					
+					pstmt = conn.prepareStatement(llpSql);
+					pstmt.setString(1, url);pstmt.setString(2, ll_id);
+					success = pstmt.executeUpdate();
+	
+			}
+			
+			conn.commit();
+		} catch (SQLException e ) {
+	        e.printStackTrace();
+	        if (conn != null) {
+	            try {
+	                System.err.print("Transaction is being Rolled back");
+	                conn.rollback();
+	            } catch(SQLException se) {
+	                se.printStackTrace();
+	            }
+	        }
+	    } catch (Exception e) {
+	    	e.printStackTrace();
+	    	if (conn != null) {
+	            try {
+	                System.err.print("Transaction is being Rolled back");
+	                conn.rollback();
+	            } catch(SQLException se) {
+	                se.printStackTrace();
+	            }
+	        }
+	    } finally {
+	    	if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+            if (conn != null) {
+            	try { 
+            		conn.setAutoCommit(true);
+                	conn.close(); 
+            	} catch(SQLException ex) {}
+            } 
+	    }
+		
+		return success;
+	}
 }
 
 
