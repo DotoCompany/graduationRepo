@@ -209,4 +209,14 @@
     <servlet-name>CommentListServlet</servlet-name>
     <url-pattern>/commentget.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CommentAddServlet</display-name>
+    <servlet-name>CommentAddServlet</servlet-name>
+    <servlet-class>controller.CommentAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CommentAddServlet</servlet-name>
+    <url-pattern>/commentAdd.do</url-pattern>
+  </servlet-mapping>
 </web-app>

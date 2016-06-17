@@ -8,17 +8,37 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <script>
 window.onload=function(){
-	$.ajax({
-		url:"commentget.do",
-		type:"post",
-		success: function(data) {
-			
-		}
-	});
+	commentGet();
 	
+	function commentGet(){
+		$.ajax({
+			url:"commentget.do",
+			data: { lifeLogCode : '1'} ,
+			type:"post",
+			success: function(data) {
+				$("#commentDiv").html(data);
+			}
+		});	
+	}
+	$("#commentBtn").click(function(){
+		$.ajax({
+			url:"commentAdd.do",
+			data: { commentText : $("#commentText").val() , llId : $("#llId").val()},
+			type:"post",
+			success: function(data) {
+				commentGet();
+				
+			}
+		});
+	});
 }
 </script>
+<div id="commentDiv"></div>
+<input type="text" name="commentText" id="commentText" />
+<input type="button" value="확인" id="commentBtn"/>
+
 </body>
 </html>

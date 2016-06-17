@@ -15,6 +15,7 @@
 <script>
 /*메세지 버튼 클릭 시.*/
 function messageBtn(friendCode,friendImage){
+	$("#messageArea").html("");
 	$.ajax({
 		type : "post",
 		url : "message.do",

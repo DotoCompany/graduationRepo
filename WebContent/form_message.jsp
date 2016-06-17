@@ -15,12 +15,18 @@
 }
 .toMessage {
 
-
-
 }
 #messageTable {
 	
 }
+
+#a td {
+	float: right;
+	margin-right: -420px;
+}
+
+
+
 </style>
 	<table>
 		<c:forEach var="message" items="${requestScope.arrayList }" >
@@ -42,7 +48,7 @@
 				</tr>
 			</c:if>
 			<c:if test="${message.fromName != sessionScope.userName }">
-			<tr>
+			<tr id="a">
 				<td class="toMessage">${message.body }</td>
 			</tr>
 			</c:if>

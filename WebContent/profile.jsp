@@ -25,10 +25,12 @@
 <div id="sideBarDiv">
       <jsp:include page="sideBar.jsp" flush="false"/>
    </div> <!-- End of sideBarDiv -->
-	<form id="profile_all_div" method="post" action="<%=request.getContextPath()%>/modify.do">
+	<form id="profile_all_div" method="post"
+		action="<%=request.getContextPath()%>/modify.do">
 		<div id="profile_">
 			<div id="profile_picture_div">
-				<img id="profile_image" src="image/logo_black.png" />
+				<img id="profile_image" src="image/logo_black.png" /> <input
+					type="button" id="logout_btn" name="logout_btn" value="로그아웃" />
 			</div>
 			<div id="profile_information_div">
 				<table>
@@ -40,24 +42,27 @@
 					</tr>
 					<tr>
 						<td><label>Name</label></td>
-						<td><input name="input_name" id="input_name" style="background-color: #f1f1f1;"
-							type="text" class="input" readonly
-							value="<%=(String) session.getAttribute("userName")%>" /></td>
+						<td><input name="input_name" id="input_name"
+							style="background-color: #f1f1f1;" type="text" class="input"
+							readonly value="<%=(String) session.getAttribute("userName")%>" /></td>
 					</tr>
 				</table>
 				<div id="update_pwd_div" style="display: none;">
 					<table>
 						<tr>
 							<td><label>현재 비밀번호</label></td>
-							<td><input type="password" class="input" id="password_check" name="password_check"/></td>
+							<td><input type="password" class="input" id="password_check"
+								name="password_check" /></td>
 						</tr>
 						<tr>
 							<td><label>새 비밀번호</label></td>
-							<td><input type="password" class="input" id="password_new" name="password_new"/></td>
+							<td><input type="password" class="input" id="password_new"
+								name="password_new" /></td>
 						</tr>
 						<tr>
 							<td><label style="font-size: 14px;">새 비밀번호확인</label></td>
-							<td><input type="password" class="input" id="password_new_confirm" name="password_new_confirm"/></td>
+							<td><input type="password" class="input"
+								id="password_new_confirm" name="password_new_confirm" /></td>
 						</tr>
 					</table>
 				</div>
@@ -65,7 +70,8 @@
 					<table>
 						<tr>
 							<td><label>현재 비밀번호</label></td>
-							<td><input type="password" class="input" name="password_check2" id="password_check2"/></td>
+							<td><input type="password" class="input"
+								name="password_check2" id="password_check2" /></td>
 						</tr>
 					</table>
 				</div>
@@ -82,7 +88,12 @@
 				</div>
 			</div>
 		</div>
-			<input id="input_name_" name="input_name_" type="hidden" value="<%=(String) session.getAttribute("userName")%>"/>
+		<input id="input_name_" name="input_name_" type="hidden" value="<%=(String) session.getAttribute("userName")%>" />
+		<div id="search_div">
+			<input type="text" name="searchBox" id="searchBox" class="input" style="margin-right: 8px; height: 22px;"/>
+			<input type="button" name="searchBtn" id="searchBtn" value="검색" style="position: absolute; margin-right: 10px;" class="normal_bt" />
+			<div id="userList"></div>
+		</div>
 	</form>
 </body>
 </html>

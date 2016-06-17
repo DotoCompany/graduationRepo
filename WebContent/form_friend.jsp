@@ -27,10 +27,10 @@ window.onload= function(){
 <c:forEach var="friends" items="${requestScope.friends }">
 	<tr>
 		<td rowspan="4" colspan="3">
-			<c:if test="${friends.image == null }">
+			<c:if test="${friends.image == '0' }">
 				<img src="image/default_profile_image.png"/>
 			</c:if>
-			<c:if test="${friends.image !=null }">
+			<c:if test="${friends.image !='0' }">
 				<img src="${friends.image }" id="friendImage" />
 			</c:if>
 		</td>

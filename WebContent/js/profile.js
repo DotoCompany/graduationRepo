@@ -1,5 +1,32 @@
 window.onload = function() {
 	
+	function requestFriend(uId) {   // 검색기능중 하나
+		$.ajax({
+			type:"post",
+			
+			data : {toUserCode : uId},
+			url: "reqFriend.do",
+			success : function(data) {
+				alert(data);	
+			}
+		});
+	}
+	$("#searchBtn").click(function(){  // 검색기능중 하나
+		$.ajax({
+			type:"post",
+			data: { searchBox : $("#searchBox").val() },
+			url: "search.do",
+			success :function(data) {
+				$("#userList").html(data);
+			}
+		});
+	});
+	
+	
+	$("#logout_btn").click(function() {
+		window.location.replace("logout.do");
+	});
+	
 	//왼쪽버튼 클릭시
 	$("#update_btn").click(function() {
 		if ($("#update_btn").val() == "수정하기") {
