@@ -9,7 +9,10 @@
 <body>
 <script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
 <script type="text/javascript">
+
 function requestFriend(uId) {
+	
+	alert("친구추가");
 	$.ajax({
 		type:"post",
 		

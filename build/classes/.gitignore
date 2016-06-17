@@ -1,5 +1,4 @@
-/admin/
-/DTO/
 /DAO/
+/DTO/
+/admin/
 /controller/
-/manager/
