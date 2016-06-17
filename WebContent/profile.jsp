@@ -9,7 +9,13 @@
 	href="<%=request.getContextPath()%>/css/profile.css">
 
 <title>RE:CALL</title>
-
+<%-- Session 체크 --%>
+<%
+	String code = "";
+	code = (String)request.getSession().getAttribute("userCode");
+	if(code==null || code.equals(""))
+		response.sendRedirect("login.jsp");
+%>
 </head>
 <%!HttpSession session;%>
 <%

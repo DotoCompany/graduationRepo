@@ -13,7 +13,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- jQuery -->
 <script src="<%=request.getContextPath()%>/common/js/jquery-1.12.3.js"></script>
-
+<%-- Session 체크 --%>
+<%
+	String code = "";
+	code = (String)request.getSession().getAttribute("userCode");
+	if(code==null || code.equals(""))
+		response.sendRedirect("login.jsp");
+%>
 
 <style>
 html, body {

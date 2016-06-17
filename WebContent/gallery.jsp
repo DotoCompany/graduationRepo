@@ -39,7 +39,13 @@ img {
 </style>
 
 <title>RE:Call - Photo</title>
-
+<%-- Session 체크 --%>
+<%
+	String code = "";
+	code = (String)request.getSession().getAttribute("userCode");
+	if(code==null || code.equals(""))
+		response.sendRedirect("login.jsp");
+%>
 </head>
 <script type="text/javascript">
 window.onload=function(){

@@ -9,7 +9,7 @@
 
 </script>
 <c:forEach var="lifeLogViewDTO" items="${requestScope.arrayList }">
-	<img src="${lifeLogViewDTO.url }" onclick="javascript:detailsee('${lifeLogViewDTO.llId}')">
+	<img src="${lifeLogViewDTO.url }" onclick="javascript:detailsee('${lifeLogViewDTO.llId}')" style="width:200px;height:150px;">
 </c:forEach>
 
 

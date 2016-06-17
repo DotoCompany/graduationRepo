@@ -11,7 +11,13 @@
 <script src="<%=request.getContextPath()%>/common/js/bootstrap.min.js"></script>
 <link href="<%=request.getContextPath()%>/common/css/bootstrap.min.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/css/friends.css" rel="stylesheet">
-
+<%-- Session 체크 --%>
+<%
+	String code = "";
+	code = (String)request.getSession().getAttribute("userCode");
+	if(code==null || code.equals(""))
+		response.sendRedirect("login.jsp");
+%>
 <script>
 /*메세지 버튼 클릭 시.*/
 function messageBtn(friendCode,friendImage){
