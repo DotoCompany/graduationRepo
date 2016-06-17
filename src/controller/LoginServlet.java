@@ -49,6 +49,7 @@ public class LoginServlet extends HttpServlet {
  		if(userDTO==null) {  // 로그인 실패시
  			response.getWriter().println(-1);
  		} else {  // 로그인 성공시
+ 			//response.sendRedirect("main.jsp");
  			response.getWriter().println(1);
  		}
 			
