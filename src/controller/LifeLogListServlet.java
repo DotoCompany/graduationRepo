@@ -25,6 +25,7 @@ public class LifeLogListServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json;charset=utf-8");
+		
 		ArrayList<LifeLogViewDTO> arrayList = LifeLogListDAO.getInstance().searchLifeLog();
 		System.out.println("lifelogListServlet arrayList size : "+arrayList.size());
 		request.setAttribute("arrayList", arrayList);

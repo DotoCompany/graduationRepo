@@ -9,7 +9,16 @@
 
 </script>
 <c:forEach var="lifeLogViewDTO" items="${requestScope.arrayList }">
-	<img src="${lifeLogViewDTO.url }" onclick="javascript:detailsee(${lifeLogViewDTO.llId})">
+	<img src="${lifeLogViewDTO.url }" onclick="javascript:detailsee('${lifeLogViewDTO.llId}')">
 </c:forEach>
 
-	
+
+<script>
+
+	function detailsee(id) {
+		/* alert(id); */
+		window.location.href="edit.do?service=GET&llId="+id;
+		/* $.post( "edit.do", { service: "GET", llId : id} ); */
+	}
+
+</script>
