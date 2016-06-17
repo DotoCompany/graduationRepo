@@ -11,12 +11,15 @@
 
 <script>
 window.onload=function(){
-	commentGet();
+	
+	 
+	/* commentGet();
+	
 	
 	function commentGet(){
 		$.ajax({
 			url:"commentget.do",
-			data: { lifeLogCode : '1'} ,
+			data: { lifeLogCode : '3'} ,
 			type:"post",
 			success: function(data) {
 				$("#commentDiv").html(data);
@@ -24,7 +27,8 @@ window.onload=function(){
 		});	
 	}
 	$("#commentBtn").click(function(){
-		$.ajax({
+		
+	 	$.ajax({
 			url:"commentAdd.do",
 			data: { commentText : $("#commentText").val() , llId : $("#llId").val()},
 			type:"post",
@@ -32,11 +36,11 @@ window.onload=function(){
 				commentGet();
 				
 			}
-		});
-	});
+		}); 
+	}); */
 }
 </script>
-<div id="commentDiv"></div>
+
 <input type="text" name="commentText" id="commentText" />
 <input type="button" value="확인" id="commentBtn"/>
 

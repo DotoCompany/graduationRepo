@@ -114,15 +114,82 @@
 					</div>
 					
 					
+					
+					
 				</div>
 				
 			</div> <!-- End of row -->
+			
+			
+			
+			<div class="row">
+				<div id="commentDiv" class="col-sm-8 col-lg-8 col-md-8 col-sm-offset-2 col-lg-offset-2 col-md-offset-2">
+				</div>
+			</div>
+			
+			<br>
+			
+			<div class="row">
+			
+				
+				<div id="comment" class="col-sm-8 col-lg-8 col-md-8 col-sm-offset-2 col-lg-offset-2 col-md-offset-2" style="margin-bottom:50px;">
+						
+						
+				</div><!-- Enf of comment -->
+			</div><!-- End of row -->
 		
 			
 			</form> <!-- End of form -->
 			
 		</div> <!-- End of Container -->	
 	</div> <!-- End of centerDiv -->
+	
+	
+	
+	<script type="text/javascript">
+window.onload=function(){
+	
+	
+	$.ajax({
+	    url : "comment.jsp",
+	    async:false,            //this is the trick
+	    success : function(result){
+	    	$("#comment").html( result );
+	               } 
+	    });
+	
+	
+	commentGet();
+	
+	
+	function commentGet(){
+		$.ajax({
+			url:"commentget.do",
+			data: { lifeLogCode : $("#llId").val()} ,
+			type:"post",
+			success: function(data) {
+				$("#commentDiv").html(data);
+			}
+		});	
+	}
+	$("#commentBtn").click(function(){
+		
+		
+	 	$.ajax({
+			url:"commentAdd.do",
+			data: { commentText : $("#commentText").val() , llId : $("#llId").val()},
+			type:"post",
+			success: function(data) {
+				commentGet();
+				
+			}
+		}); 
+	});
+	
+}
+</script>
+	
+	
 	
 	<!-- Custom sources -->
 	<script src="<%=request.getContextPath()%>/js/markerView.js"

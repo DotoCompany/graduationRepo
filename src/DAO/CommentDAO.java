@@ -23,6 +23,7 @@ public class CommentDAO {
 	 * @return
 	 */
 	public ArrayList<CommentViewDTO> getComment(String lifeLogCode) {
+		
 		ArrayList<CommentViewDTO> arrayList = new ArrayList<CommentViewDTO>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
